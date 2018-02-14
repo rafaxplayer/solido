@@ -21,7 +21,7 @@ function solido_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => 'ffffff',
 		'width'                  => 1000,
-		'height'                 => 250,
+		'height'                 => 350,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'solido_header_style',
 	) ) );

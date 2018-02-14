@@ -1,8 +1,8 @@
 /*!
 Theme Name: solido
-Theme URI: http://underscores.me/
+Theme URI: 
 Author: Underscores.me
-Author URI: http://underscores.me/
+Author URI: http://juanrafaelsimarro.com/
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -30,7 +30,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Forms
 # Navigation
 	## Links
-	## Menus
+    ## Menus
+    ## Pagination
 # Accessibility
 # Alignments
 # Clearings
@@ -44,7 +45,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 # Header
 # Footer
-#Template classes
+# Template classes
+# Slider
+
 --------------------------------------------------------------*/
 
 
@@ -157,7 +160,7 @@ svg:not(:root) {
 }
 
 figure {
-    margin: 1em 40px;
+    margin: 1em 2.5rem;
 }
 
 hr {
@@ -261,7 +264,7 @@ table {
 
 td,
 th {
-    padding: 5px;
+    padding: 0.3125rem;
 }
 
 
@@ -289,6 +292,7 @@ h4,
 h5,
 h6 {
     clear: both;
+    line-height: 1;
 }
 
 dfn,
@@ -377,7 +381,7 @@ ul {
 }
 
 ol {
-    list-style: decimal;
+    list-style: none;
 }
 
 li>ul,
@@ -410,25 +414,15 @@ table {
     margin: 0 0 1.5em;
 }
 
+blockquote {
+    padding-left: .8rem;
+    border-left: 4px solid #666;
+}
+
 
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    /* border: 1px solid;
-    border-color: #ccc #ccc #bbb;
-    border-radius: 3px;
-    background: #e6e6e6;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 12px;
-    font-size: 0.75rem;
-    line-height: 1;
-    padding: .6em 1em .4em; */
-}
 
 button:hover,
 input[type="button"]:hover,
@@ -466,8 +460,8 @@ input[type="color"],
 textarea {
     color: #666;
     border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 3px;
+    border-radius: 0.1875rem;
+    padding: 0.1875rem;
 }
 
 input[type="text"]:focus,
@@ -518,81 +512,143 @@ a:active {
 
 
 /*--------------------------------------------------------------
+## Pagination
+--------------------------------------------------------------*/
+
+.pagination {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
+}
+
+.pagination .nav-links>* {
+    font-size: 1.5rem;
+    padding: .5rem;
+}
+
+
+/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 
 .main-navigation {
     clear: both;
-    flex: 1;
+    width: 100%;
+    text-align: center;
 }
 
 .main-navigation ul {
+    text-align: left;
     display: none;
     list-style: none;
     margin: 0;
     padding-left: 0;
 }
 
-.main-navigation ul a {
-    color: #ffffff;
-    font-weight: 500;
-    transition: all .4s;
-}
-
-.main-navigation ul a:hover {
-    background-color: #dd0000;
-    color: #000;
-}
-
-.main-navigation ul {
-    text-align: center;
-}
-
-.main-navigation ul ul {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    float: left;
-    position: absolute;
-    top: 100%;
-    left: -999em;
-    z-index: 99999;
-    text-align: left;
-    background-color: #706e6ea1;
-}
-
-.main-navigation ul ul ul {
-    left: -999em;
-    top: 0;
-}
-
-.main-navigation ul ul li:hover>ul,
-.main-navigation ul ul li.focus>ul {
-    left: 100%;
-}
-
-.main-navigation ul ul a {
-    width: 200px;
-}
-
-.main-navigation ul li:hover>ul,
-.main-navigation ul li.focus>ul {
-    left: auto;
-}
-
 .main-navigation li {
-    display: inline-block;
+    display: block;
     position: relative;
+    -webkit-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
 }
 
 .main-navigation a {
     display: block;
+    padding: .8rem;
     text-decoration: none;
-    padding: .6rem;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.main-navigation a:hover {
+    color: #666;
+}
+
+.main-navigation>div>ul {
+    background-color: #000;
+}
+
+.main-navigation ul ul {
+    float: left;
+    z-index: 99999;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+    position: relative;
+}
+
+.main-navigation ul li>ul,
+.main-navigation ul li>ul {
+    float: none;
+}
+
+.main-navigation li.menu-item-has-children {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+@media screen and (min-width:37.5em) {
+    .main-navigation ul {
+        text-align: center;
+    }
+    .main-navigation ul li {
+        text-align: left;
+    }
+    .main-navigation .current-menu-item a {
+        color: #dd0000;
+    }
+    .main-navigation>div>ul {
+        background-color: transparent;
+    }
+    .main-navigation>div>ul>li {
+        display: inline-block;
+    }
+    .main-navigation ul ul {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        -filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        top: 100%;
+        left: 0;
+        background-color: #000;
+    }
+    .main-navigation ul ul a {
+        width: 200px;
+    }
+    .main-navigation ul ul ul {
+        left: -999em;
+        opacity: 0;
+        -filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        -webkit-transition: opacity .5s;
+        transition: opacity .5s;
+        top: 0;
+    }
+    .main-navigation ul li:hover>ul,
+    .main-navigation ul li.focus>ul {
+        opacity: 1;
+        display: block;
+        -filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    .main-navigation ul ul li:hover>ul,
+    .main-navigation ul ul li.focus>ul {
+        left: 100%;
+        opacity: 1;
+        -filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
 }
 
 
 /* Small menu. */
 
-.menu-toggle,
+.menu-toggle {
+    display: inline-block;
+    color: white;
+    font-size: 2rem;
+    padding: .5rem;
+    cursor: pointer;
+}
+
 .main-navigation.toggled ul {
     display: block;
 }
@@ -685,13 +741,11 @@ a:active {
 --------------------------------------------------------------*/
 
 .alignleft {
-    display: inline;
     float: left;
     margin-right: 1.5em;
 }
 
 .alignright {
-    display: inline;
     float: right;
     margin-left: 1.5em;
 }
@@ -747,26 +801,37 @@ a:active {
 
 .widget h2 {
     margin: 0;
-    padding-bottom: .2rem;
     position: relative;
 }
 
 .widget h2:before {
     content: '';
-    width: 70px;
+    width: 4.375rem;
     height: 3px;
     background-color: #000;
     position: absolute;
-    top: 110%;
+    top: 130%;
     left: 0;
 }
 
 .widget ul li a {
     padding: .6rem 0;
+    transition: margin-left .4s;
 }
 
 .widget ul li a:after {
     content: '';
+}
+
+.widget ul li a:before {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: .3rem;
+}
+
+.widget ul li a:hover {
+    margin-left: .5rem;
 }
 
 .widget select {
@@ -780,9 +845,10 @@ a:active {
 .widget .search-form .search-field {
     background-color: #fff;
     border: 1px solid #eaeaea;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 2.5rem;
     width: 100%;
+    line-height: 2.5;
 }
 
 .widget .search-form .search-submit {
@@ -793,8 +859,8 @@ a:active {
     opacity: 0;
     z-index: 2;
     padding: 0;
-    height: 40px;
-    width: 40px;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 .widget .search-form>div:before {
@@ -805,7 +871,7 @@ a:active {
     position: absolute;
     display: inline-block;
     font-weight: 900;
-    right: 18px;
+    right: 1.125rem;
     top: 50%;
     transform: translate(0px, -50%);
     z-index: 1;
@@ -817,14 +883,14 @@ a:active {
 --------------------------------------------------------------*/
 
 .site-content {
-    margin: 3rem auto 2rem;
-    padding: 20px;
-    max-width: 80rem;
+    margin: 5rem auto 2rem;
+    padding: 1.25rem;
 }
 
 .blog-content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    /*grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));*/
+    grid-template-columns: 1fr;
     grid-gap: 1.8rem 1.5rem;
 }
 
@@ -843,12 +909,6 @@ a:active {
 
 .updated:not(.published) {
     display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-    /*margin: 1.5em 0 0;*/
 }
 
 .page-links {
@@ -873,6 +933,7 @@ a:active {
 }
 
 .post,
+.page,
 .widget,
 .post-date {
     box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
@@ -885,21 +946,21 @@ a:active {
 
 .post .post-date {
     display: flex;
-    width: 67px;
-    height: 67px;
+    width: 4.1875rem;
+    height: 4.1875rem;
     flex-direction: column;
     padding: .5rem;
     border-radius: 50%;
     align-items: center;
     position: absolute;
     background-color: white;
-    top: -37px;
+    top: -2.3125rem;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .post .post-date a {
-    color: rgb(202, 195, 195);
+    color: #525050;
 }
 
 .post .post-date:hover a {
@@ -909,12 +970,12 @@ a:active {
 .post .post-date .day {
     font-size: 1.5em;
     font-weight: 900;
-    padding-bottom: 5px;
+    padding-bottom: 0.3125rem;
     text-decoration: underline;
 }
 
 .post .post-date .moth {
-    margin-top: -13px;
+    margin-top: -0.8125rem;
     font-weight: 600;
 }
 
@@ -925,17 +986,143 @@ a:active {
     padding-right: .8rem;
 }
 
+.entry-title,
+.entry-title a,
+.widget h2 {
+    color: #525050;
+}
+
+article.page {
+    padding: 1rem;
+}
+
+article.page .entry-header h1 {
+    text-align: center;
+}
+
 
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
 
-.comment-content a {
-    word-wrap: break-word;
+#comments {
+    margin-top: 4rem;
+    position: relative;
 }
 
-.bypostauthor {
+#comments h2 {
+    position: relative;
+    display: inline;
+}
+
+#comments h2:before {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: #000;
+    position: absolute;
+    top: 130%;
+    left: 0;
+}
+
+.comment-list .reply a {
+    padding: .5rem;
+    background-color: #21759b;
+    color: white;
+    font-size: .6rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.comment-list .reply a:hover {
+    background-color: #124157;
+}
+
+.comment-list .vcard {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.comment-list .vcard span.says {
+    font-weight: 400;
+    margin-left: .3rem;
+}
+
+.comment-list .vcard img.avatar {
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+
+.comment-list .comment-body {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
+}
+
+.comment-list .comment-body:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 25%;
+    height: 1px;
+    background-color: #97939370;
+}
+
+.comment-list .comment-content {
+    font-weight: 600;
+    color: #242323a4;
+}
+
+.comment-list .comment-metadata {
+    display: none;
+}
+
+.comment-list .bypostauthor {
     display: block;
+}
+
+.comment-form-comment>label {
+    display: none
+}
+
+.comment-form p {
+    margin: 0 0 .5em 0;
+    font-weight: 600;
+    color: #918b8b;
+}
+
+.comment-form input,
+.comment-form textarea {
+    background-color: transparent;
+    border: #918b8b 2px solid;
+    color: #918b8b;
+}
+
+.comment-form p:not(.comment-form-comment):not(.form-submit) {
+    display: inline-block;
+}
+
+.comment-form p:not(.comment-form-comment) label {
+    display: block;
+}
+
+.comment-form .submit {
+    background: none;
+    color: black;
+    border: none;
+    border: 3px solid black;
+    padding: .8rem 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.comment-form .submit:hover {
+    border: 3px solid #333;
+    color: #333;
 }
 
 
@@ -1076,7 +1263,7 @@ object {
 }
 
 .site-header {
-    background: #111;
+    background-color: #111;
 }
 
 .site-branding {
@@ -1089,8 +1276,12 @@ object {
     padding: 1rem;
 }
 
+.site-title {
+    font-size: 3.5rem;
+}
+
 .site-branding .custom-logo-link {
-    max-width: 100px;
+    max-width: 9rem;
 }
 
 .site-branding .site-title,
@@ -1110,6 +1301,60 @@ object {
 .site-footer {
     clear: both;
     width: 100%;
+    background-color: #171616;
+}
+
+.footer-widgets {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.footer-widgets .widget {
+    box-shadow: unset;
+}
+
+.footer-widgets .widget,
+.footer-widgets .widget a,
+.footer-widgets .widget h2,
+.site-info a {
+    color: #777373;
+}
+
+.footer-widgets .widget #wp-calendar {
+    margin: 0 auto;
+}
+
+.footer-widgets .widget #wp-calendar a {
+    color: white;
+}
+
+.footer-widgets .footer-widgets-area {
+    padding: .5rem 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.site-info {
+    padding: 1rem;
+    background-color: #000;
+    color: white;
+    text-align: right;
+    font-size: .8em;
+}
+
+@media screen and (min-width: 64rem) {
+    .footer-widgets {
+        flex-direction: row;
+    }
+    .footer-widgets .footer-widgets-area:nth-child(1),
+    .footer-widgets .footer-widgets-area:nth-last-child(2) {
+        border-right: 1px solid #7773731f;
+    }
+    .footer-widgets .footer-widgets-area {
+        flex-basis: 33%;
+    }
 }
 
 
@@ -1131,5 +1376,81 @@ object {
     color: black;
 }
 
+.button-up {
+    box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
+    color: white;
+    background-color: #232121;
+    padding: .2rem 1.1rem;
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.button-up:hover {
+    background-color: #0f0e0e
+}
+
 
 /*=====  End of Template classes  ======*/
+
+
+/*=============================================
+=            Slider            =
+=============================================*/
+
+.slider-item {
+    position: relative;
+}
+
+.slider-item-info {
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slider-item p {
+    background-color: #23212175;
+    font-weight: 100;
+    padding: 1rem;
+}
+
+.slider-item h2 {
+    font-size: 4em;
+    font-weight: 100;
+    margin-bottom: -8px;
+}
+
+.slider-item .more {
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    background-color: red;
+}
+
+.slider-item .more:hover {
+    background-color: rgb(146, 5, 5);
+}
+
+.slider-item .more a {
+    color: white;
+}
+
+.slider-item .more a:hover {
+    color: inherit;
+}
+
+@media screen and (max-width:60rem) {
+    .slider-item-info {
+        display: none;
+    }
+}

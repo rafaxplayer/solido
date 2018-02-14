@@ -1,37 +1,50 @@
 jQuery(function($) {
 
-    // Script to show hide the Google Text Font input depending on the value of the Text select
-    var font = $('#customize-control-typography_face_titles select').val();
+    // Script to show hide the Google Titles Font input depending on the value of the Text select
+    var $font_titles_select = $('#customize-control-solido_typography_face_titles select'),
+        $font_titles = $font_titles_select.val(),
+        $face_titles_input = $('#customize-control-solido_google_font_titles');
 
-    if (font != 'Google Fonts') {
-        $('#customize-control-google_font_titles').hide();
+
+    if ($font_titles != 'Google Fonts') {
+        $face_titles_input.hide();
     } else {
-        $('#customize-control-google_font_titles').show();
+        $face_titles_input.show();
     }
 
-    $('#customize-control-typography_face_titles select').change(function() {
+    $font_titles_select.change(function() {
+
         var font_change = $(this).val();
+
         if (font_change != 'Google Fonts') {
-            $('#customize-control-google_font_titles').hide();
+            $face_titles_input.hide();
         } else {
-            $('#customize-control-google_font_titles').show();
+            $face_titles_input.show();
         }
     });
 
-    // Script to hide show the Google Heading Font input depending on value of the Heading select
-    var font = $('#customize-control-typography_face_texts select').val();
-    if (font != 'Google Fonts') {
-        $('#customize-control-google_font_texts').hide();
+    // Script to hide show the Google texts Font input depending on value of the Heading select
+    var $font_texts_select = $('#customize-control-solido_typography_face_texts select'),
+        $font_texts = $font_texts_select.val(),
+        $face_texts_input = $('#customize-control-solido_google_font_texts');
+
+    if ($font_texts != 'Google Fonts') {
+        $face_texts_input.hide();
     } else {
-        $('#customize-control-google_font_texts').show();
+        $face_texts_input.show();
     }
-    $('#customize-control-typography_face_texts select').change(function() {
+
+    $font_texts_select.change(function() {
+
         var font_change = $(this).val();
+
         if (font_change != 'Google Fonts') {
-            $('#customize-control-google_font_texts').hide();
+            $face_texts_input.hide();
         } else {
-            $('#customize-control-google_font_texts').show();
+            $face_texts_input.show();
         }
     });
+
+
 
 });

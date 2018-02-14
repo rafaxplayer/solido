@@ -36,3 +36,7 @@ solido includes support for Infinite Scroll in Jetpack.
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* JQuery Easing http://gsgd.co.uk/sandbox/jquery/easing/ Open source under the BSD License. 
+* Font Awesome 5.0.0 by @davegandy http://fontawesome.io http://fontawesome.io/license
+* bxSlider adds the responsive slider by Steven Wanderski https://bxslider.com/ licensed the MIT (http://opensource.org/licenses/MIT).
+

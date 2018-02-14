@@ -18,6 +18,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 		<?php
+		
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
@@ -41,7 +42,11 @@ get_header(); ?>
 			endwhile;?>
 			</div>
 		<?PHP
-			the_posts_navigation();
+			the_posts_pagination( array(
+				'prev_text'          => '<i class="fa fa-angle-left"></i> ' . esc_html__( 'Previous', 'solido' ),
+				'next_text'          => esc_html__( 'Next', 'solido' ) . ' <i class="fa fa-angle-right"></i>',
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'solido' ) . ' </span>',
+			) );
 
 		else :
 

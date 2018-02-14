@@ -23,7 +23,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'solido' ); ?></a>
-
 	<header id="masthead" class="site-header" >
 		<div class="header-wrapp" style="background-image:url(<?php header_image(); ?>);">
 			<div class="site-branding">
@@ -40,14 +39,14 @@
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) : ?>
 						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php
-					endif;?>
+				<?php endif; ?>
 				</div>
 				
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'solido' ); ?></button>
+				<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'solido' ); ?></button> -->
+				<i class="menu-toggle fas fa-bars"></i>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
@@ -58,5 +57,6 @@
 		</div>
 		
 	</header><!-- #masthead -->
-
+	<?php do_action( 'solido_show_slider' );?> 
 	<div id="content" class="site-content">
+		

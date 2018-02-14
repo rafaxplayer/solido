@@ -12,20 +12,29 @@
  */
 function solido_customize_register( $wp_customize ) {
 
-	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customize-layouts.php')){
+	$defaults = defaults_customizer();
+
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-layouts.php')){
 		
-		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customize-layouts.php';
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-layouts.php';
 	}
 	
-	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customize-colors.php')){
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-colors.php')){
 			
-		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customize-colors.php';
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-colors.php';
 	}
 	
-	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customize-typography.php')){
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-typography.php')){
 			
-		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customize-typography.php';
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-typography.php';
 	}
+
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-footer.php')){
+		
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-footer.php';
+	}
+	
+
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -42,6 +51,13 @@ function solido_customize_register( $wp_customize ) {
 			'selector'        => '.site-description',
 			'render_callback' => 'solido_customize_partial_blogdescription',
 		) );
+
+		$wp_customize->selective_refresh->add_partial( 'solido_footer_text',array(
+			'selector'   	=>'.footer-text',
+			'setting'		=>'solido_options[footer-text]',
+			'render_callback'=>'solido_customize_partial_footer-text'
+			
+		));
 	}
 }
 add_action( 'customize_register', 'solido_customize_register' );
@@ -65,18 +81,28 @@ function solido_customize_partial_blogdescription() {
 }
 
 /**
+ * Render footer text for the selective refresh partial.
+ *
+*/
+function solido_customize_partial_footertext(){
+	$solido_options = get_theme_mod('solido_options');
+	return $solido_options['footer-text'];
+}
+
+/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function solido_customize_preview_js() {
 
 	wp_enqueue_script( 'solido-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'solido-customize-init', get_template_directory_uri() . '/assets/js/options.js', array( 'jquery' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'solido_customize_preview_js' );
 
 
 function solido_customize_options_js() {
 	
-	wp_enqueue_script( 'solido-customize-init', get_template_directory_uri() . '/assets/js/options.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'solido-customize-options', get_template_directory_uri() . '/assets/js/options.js', array( 'jquery' ), '20151215', true );
 }
 add_action( 'admin_enqueue_scripts', 'solido_customize_options_js' );
 

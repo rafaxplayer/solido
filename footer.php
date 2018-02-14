@@ -14,16 +14,32 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+		
+		<?php do_action('solido_button_up'); ?>
+		<div class="footer-widgets">
+
+			<?php do_action( 'solido_footer_widgets'); ?>
+			
+		</div>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'solido' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'solido' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
 			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'solido' ), 'solido', '<a href="http://underscores.me/">Underscores.me</a>' );
+				$solido_options = get_theme_mod('solido_options');
+			    if(isset($solido_options['footer-copy']) && $solido_options['footer-copy']):
+				/*copy*/
+					printf( esc_html__( '&copy;%1$s %2$s | ', 'solido' ), date('Y') , get_bloginfo( 'name' ));
+				endif;
 			?>
+			<span class="footer-text">
+			<?php
+				
+				if(isset($solido_options['footer-text']) && !empty($solido_options['footer-text'])):
+				    printf( esc_html( $solido_options['footer-text'] )) ;
+				else:
+					printf( esc_html__( 'Theme: %1$s by %2$s.', 'solido' ), 'solido', '<a href="http://juanrafaelsimarro.com/">jR.simarro</a>' );
+			    endif;
+			?>
+
+            </span>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

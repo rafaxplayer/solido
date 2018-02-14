@@ -19,6 +19,12 @@
             $('.site-description').text(to);
         });
     });
+    //footer text
+    wp.customize('solido_options[footer-text]', function(value) {
+        value.bind(function(to) {
+            $('.footer-text').text(to);
+        });
+    });
 
     // Header text color.
     wp.customize('header_textcolor', function(value) {
@@ -39,9 +45,5 @@
             }
         });
     });
-
-
-
-
 
 })(jQuery);
