@@ -10,9 +10,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<?php solido_posted_on(); ?>
-	<?php solido_post_thumbnail(); ?>
-	<header class="entry-header">
+
+	<?php 
+		
+		solido_post_thumbnail(); 
+		$paddingtop = !has_post_thumbnail() ? 'space-top' : '';
+	?>
+
+	<header class="entry-header <?php echo $paddingtop; ?>">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );

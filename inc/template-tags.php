@@ -129,14 +129,19 @@ endif;
 if ( ! function_exists( 'solido_excerpt' ) ) :
 
 	function solido_excerpt($num){
-		$limit = $num + 1;
+
+		$limit = $num;
+
 		$read_more = sprintf('<div class="more"><a href="%1$s">%2$s</a></div>',
 			esc_url( get_permalink( get_the_ID() ) ),
         	/* translators: %s: Name of current post */
-			__( 'READ MORE', 'solido' ));;
+			__( 'READ MORE', 'solido' ));
+
 		$excerpt = explode(' ', get_the_excerpt(), $limit);
+			
 		array_pop($excerpt);
-		$excerpt = '<p>'.implode(" ",$excerpt).'</p>'.$read_more;
+
+		$excerpt = '<p>'.implode(" ",$excerpt).'...</p>'. $read_more;
 	
 		echo $excerpt;
 	}

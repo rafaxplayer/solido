@@ -42,7 +42,9 @@ if ( ! function_exists( 'solido_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size('slider', 1350, 500, true);
+		add_image_size('solido-slider', 1350, 500, true);
+		add_image_size( 'solido-services', 1000, 1000, true );
+		add_image_size( 'solido-team', 200, 200, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -158,7 +160,7 @@ function solido_scripts() {
 	wp_enqueue_style( 'solido-font-awesome', $directory_uri . '/assets/css/fontawesome-all.min.css' );
 
 	wp_enqueue_style( 'solido-slider-css', $directory_uri . '/assets/css/jquery.bxslider.min.css' );
-		
+			
 	wp_enqueue_style( 'solido-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'solido-slider', $directory_uri . '/assets/js/jquery.bxslider.min.js', array('jquery'), '4.2.12', true );
@@ -181,14 +183,39 @@ add_action( 'wp_enqueue_scripts', 'solido_scripts' );
 */
 function solido_remove_home_category( $query ) {
 
-	$idObj = get_category_by_slug('slider'); 
-	$id = $idObj->term_id;
+	$idObjSlider = get_category_by_slug('slider'); 
+	$catservice = isset($solido_options['panel-services-cat']) && !empty($solido_options['panel-services-cat']) ? $solido_options['panel-services-cat'] : 'service';
+	$catteam = isset($solido_options['panel-team-cat']) && !empty($solido_options['panel-team-cat']) ? $solido_options['panel-team-cat'] : 'team';
+	$idObjService = get_category_by_slug($catservice);
+	$idObjTeam = get_category_by_slug($catteam);
+	$solido_options = get_theme_mod('solido_options');
+
+	$outputhids = array();
+
+	if($idObjSlider){
+		$outputhids[]='-'.$idObjSlider->term_id;
+	}
+
+	if($idObjService){
+		$outputhids[]='-'.$idObjService->term_id;
+	}
 	
-    if ( $query->is_home() && $query->is_main_query() ) {
-        $query->set( 'cat', '-'.$id);
+	if($idObjTeam){
+		$outputhids[]='-'.$idObjTeam->term_id;
+	}
+
+    if ( $query->is_home() && $query->is_main_query() && $outputhids) {
+		
+        $query->set( 'cat',implode(",", $outputhids));
     }
 }
 add_filter( 'pre_get_posts', 'solido_remove_home_category' );
+
+
+function themeslug_filter_front_page_template( $template ) {
+    return is_home() ? '' : $template;
+}
+add_filter( 'frontpage_template', 'themeslug_filter_front_page_template' );
 
 /** 
  * Implement the Custom Header feature.

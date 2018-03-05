@@ -36,6 +36,9 @@ jQuery(function($) {
     button.click(function(e) {
         e.preventDefault();
         container.toggleClass('toggled');
+        if (container.hasClass('toggled')) {
+            $('html,body').animate({ scrollTop: 0 }, 500);
+        }
 
     });
 

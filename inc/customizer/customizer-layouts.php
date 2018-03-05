@@ -39,9 +39,10 @@
         'type' => 'select',
         'priority' => 101,
         'choices' => array( 
-            1 => esc_html__( 'Right menu (default)', 'solido' ), 
-            2 => esc_html__( 'Left menu', 'solido' ),
-            3 => esc_html__( 'Center menu', 'solido' ),
+            1 => esc_html__( 'Right (default)', 'solido' ), 
+            2 => esc_html__( 'Left', 'solido' ),
+            3 => esc_html__( 'Center bottom', 'solido' ),
+            4 => esc_html__( 'Center Top', 'solido' ),
             
         )
     ));
@@ -55,7 +56,8 @@
     $wp_customize->add_control( 'solido_show_slider_control', array(
 		'label'      => __( 'Show slider', 'solido' ),
 		'section'    => 'solido_layouts_section',
-		'settings'   => 'solido_options[show-slider]',
+        'settings'   => 'solido_options[show-slider]',
+        'description'=> esc_html__('For use slider , create post with category "slider"','solido'),
         'type' => 'checkbox',
         'priority' => 102,
                     
@@ -74,7 +76,7 @@
 		'settings'   => 'solido_options[blog-list-style]',
         'type'       => 'select',
         'choices'     => array(
-            1 => esc_html__('Grid format (Default)', 'solido'),
+            1 => esc_html__('Grid format (default)', 'solido'),
             2 => esc_html__('List format', 'solido')
         ),
         'priority'   => 103,

@@ -57,6 +57,7 @@
 		</div>
 		
 	</header><!-- #masthead -->
-	<?php do_action( 'solido_show_slider' );?> 
+	
+	<?php //do_action( 'solido_show_slider' );?> 
 	<div id="content" class="site-content">
 		

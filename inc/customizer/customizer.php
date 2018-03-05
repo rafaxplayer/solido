@@ -34,61 +34,108 @@ function solido_customize_register( $wp_customize ) {
 		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-footer.php';
 	}
 	
-
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-front-page.php')){
+		
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-front-page.php';
+	}
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	
+	$wp_customize->remove_control( 'display_header_text' );
+
+	// position menu header
+	$wp_customize->add_setting( 'solido-show-site-branding' , array(
+		'default' => $defaults['show-site-branding'],
+		'sanitize_callback' => 'solido_sanitize_checkbox',
+    ));
+    
+    $wp_customize->add_control( 'solido_show_slider_control', array(
+		'label'      => esc_html__( 'Show or hide title and description','solido' ),
+		'section'    => 'title_tagline',
+        'settings'   => 'solido-show-site-branding',
+        'type' => 'checkbox',
+        'priority' =>20,
+                    
+    ));
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
-			'render_callback' => 'solido_customize_partial_blogname',
+			'render_callback' => function(){
+				bloginfo( 'name' );
+			},
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => 'solido_customize_partial_blogdescription',
+			'render_callback' => function(){
+				bloginfo( 'description' );
+			},
 		) );
+
+		$wp_customize->selective_refresh->add_partial( 'solido_options[panel-image-contact]',array(
+			'selector'   	=>'#solido-contact',
+			'setting'		=>'solido_options[panel-image-contact]',
+			'render_callback'=> function(){
+				$solido_options = get_theme_mod('solido_options');
+				return $solido_options['panel-image-contact'];
+			},
+			
+		));
+
+		$wp_customize->selective_refresh->add_partial( 'solido_options[panel-text-team]',array(
+			'selector'   	=>'#team-text',
+			'setting'		=>'solido_options[panel-text-team]',
+			'render_callback'=>function(){
+				$solido_options = get_theme_mod('solido_options');
+				return $solido_options['panel-text-team'];
+			}
+			
+		));
+
+		$wp_customize->selective_refresh->add_partial( 'solido_options[panel-text-contact]',array(
+			'selector'   	=>'#contact-text',
+			'setting'		=>'solido_options[panel-text-contact]',
+			'render_callback'=>function(){
+				$solido_options = get_theme_mod('solido_options');
+				return $solido_options['panel-text-contact'];
+			}
+			
+		));
+
+		$wp_customize->selective_refresh->add_partial( 'solido_options[panel-button-contact]',array(
+			'selector'   	=>'#contact-button',
+			'setting'		=>'solido_options[panel-button-contact]',
+			'render_callback'=>function(){
+				$solido_options = get_theme_mod('solido_options');
+				return $solido_options['panel-button-contact'];
+			}
+			
+		));
 
 		$wp_customize->selective_refresh->add_partial( 'solido_footer_text',array(
 			'selector'   	=>'.footer-text',
 			'setting'		=>'solido_options[footer-text]',
-			'render_callback'=>'solido_customize_partial_footer-text'
+			'render_callback'=>function(){
+				$solido_options = get_theme_mod('solido_options');
+				return $solido_options['footer-text'];
+			}
 			
 		));
 	}
 }
 add_action( 'customize_register', 'solido_customize_register' );
 
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function solido_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
 
 /**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function solido_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
- * Render footer text for the selective refresh partial.
+ * Check if this page is fron-page.php template
  *
 */
-function solido_customize_partial_footertext(){
-	$solido_options = get_theme_mod('solido_options');
-	return $solido_options['footer-text'];
+function solido_is_static_front_page() {
+	
+	return ( is_front_page() && ! is_home() );
 }
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */

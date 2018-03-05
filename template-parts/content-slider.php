@@ -3,5 +3,5 @@
      <?php the_title('<h2>', '</h2>');?>
      <?php the_content( )?>
   </div>
- <?php the_post_thumbnail('slider');?>
+ <?php the_post_thumbnail('solido-slider');?>
 </article>

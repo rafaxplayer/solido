@@ -16,7 +16,10 @@ function solido_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
-
+	// Add class on front page.
+	if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
+		$classes[] = 'solido-front-page';
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'solido_body_classes' );

@@ -31,18 +31,40 @@
         value.bind(function(to) {
             if ('blank' === to) {
                 $('.site-title, .site-description').css({
-                    'clip': 'rect(1px, 1px, 1px, 1px)',
-                    'position': 'absolute'
+                    'display': 'none'
+                });
+                $('.site-titles').css({
+                    'padding': '0'
                 });
             } else {
                 $('.site-title, .site-description').css({
-                    'clip': 'auto',
-                    'position': 'relative'
+                    'display': 'block'
+                });
+                $('.site-titles').css({
+                    'padding': '1rem 1.5rem'
                 });
                 $('.site-title a, .site-description').css({
                     'color': to
                 });
             }
+        });
+    });
+
+    wp.customize('solido_options[panel-text-team]', function(value) {
+        value.bind(function(to) {
+            $('#solido-team h2').text(to);
+        });
+    });
+
+    wp.customize('solido_options[panel-text-contact]', function(value) {
+        value.bind(function(to) {
+            $('.contact-wrap .info h3').text(to);
+        });
+    });
+
+    wp.customize('solido_options[panel-button-contact]', function(value) {
+        value.bind(function(to) {
+            $('.contact-wrap .info a').text(to);
         });
     });
 

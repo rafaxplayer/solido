@@ -17,13 +17,7 @@
             'settings'   => 'solido_options[colors][primary-color]',
             'priority'   => '',
 			'description'=> esc_html__('Set header background color when header image is not defined','solido'),
-        ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-			'container_inclusive' => true,
-			'fallback_refresh' => false,
-        ),
+        )
         
     );
 
@@ -42,13 +36,7 @@
             'settings'   => 'solido_options[colors][header-menu-text-color]',
             'priority'   => '',
 			'description'=> esc_html__('Set Header menu text color','solido'),
-        ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-			'container_inclusive' => true,
-			'fallback_refresh' => false,
-        ),
+        )
         
     );
     // Menu text hover color
@@ -64,13 +52,7 @@
             'settings'   => 'solido_options[colors][header-menu-text-hover-color]',
             'priority'   => '',
             'description'=> esc_html__('Set Header menu hover items color','solido'),
-        ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-            'container_inclusive' => true,
-            'fallback_refresh' => false,
-        ),
+        )
         
     );
 
@@ -87,13 +69,7 @@
             'settings'   => 'solido_options[colors][header-menu-item-hover-color]',
             'priority'   => '',
             'description'=> esc_html__('Set background color on Header menu item hover ','solido'),
-        ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-            'container_inclusive' => true,
-            'fallback_refresh' => false,
-        ),
+        )
         
     );
 
@@ -110,13 +86,7 @@
             'settings'   => 'solido_options[colors][header-menu-active-color]',
             'priority'   => '',
             'description'=> esc_html__('Set active menu item color','solido'),
-        ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-            'container_inclusive' => true,
-            'fallback_refresh' => false,
-        ),
+        )
         
     );
 
@@ -133,13 +103,24 @@
             'settings'   => 'solido_options[colors][titles-color]',
             'priority'   => '',
             'description'=> esc_html__('Set blog and pages titles color','solido'),
+        )
+        
+    );
+
+    //**** Blog entryes date background color *****/
+    $colors[] = array(
+        'slug'      =>'solido_options[colors][blog-dates-background-color]',
+        'setting'   =>array(
+            'default'  =>$defaults['colors']['blog-dates-background-color'],
+            'sanitize_callback' => 'sanitize_hex_color',
         ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-            'container_inclusive' => true,
-            'fallback_refresh' => false,
-        ),
+        'control'   =>array(
+            'label'      => esc_html__('Blog background dates color','solido'),
+            'section'    => 'colors',
+            'settings'   => 'solido_options[colors][blog-dates-background-color]',
+            'priority'   => '',
+            'description'=> esc_html__('Set blog background dates color','solido'),
+        )
         
     );
 
@@ -156,13 +137,7 @@
             'settings'   => 'solido_options[colors][paragraphs-color]',
             'priority'   => '',
             'description'=> esc_html__('Set blog and pages texts color','solido'),
-        ),
-        'selective_show' => false,
-        'selective'      =>array(
-            'selector'   =>'',
-            'container_inclusive' => true,
-            'fallback_refresh' => false,
-        ),
+        )
         
     );
     
@@ -180,13 +155,7 @@
             'settings'   => 'solido_options[colors][links-color]',
             'priority'   => '',
 			'description'=> esc_html__('Set links color','solido'),
-        ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-			'container_inclusive' => true,
-			'fallback_refresh' => false,
-        ),
+        )
         
     );
     // Links hover color
@@ -202,15 +171,46 @@
             'settings'   => 'solido_options[colors][links-hover-color]',
             'priority'   => '',
             'description'=> esc_html__('Set links hover color','solido'),
-        ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-            'container_inclusive' => true,
-            'fallback_refresh' => false,
-        ),
+        )
         
     );
+
+    /**** Footer ****/
+
+     //Footer background color
+     $colors[] = array(
+        'slug'      =>'solido_options[colors][footer-background-color]',
+        'setting'   =>array(
+            'default'  =>$defaults['colors']['footer-background-color'],
+            'sanitize_callback' => 'sanitize_hex_color',
+        ),
+        'control'   =>array(
+            'label'      => esc_html__('Footer background color','solido'),
+            'section'    => 'colors',
+            'settings'   => 'solido_options[colors][footer-background-color]',
+            'priority'   => '',
+            'description'=> esc_html__('Set Footer background color','solido'),
+        )
+        
+    );
+
+    //Footer widgets text color
+    $colors[] = array(
+        'slug'      =>'solido_options[colors][footer-widgets-text-color]',
+        'setting'   =>array(
+            'default'  =>$defaults['colors']['footer-widgets-text-color'],
+            'sanitize_callback' => 'sanitize_hex_color',
+        ),
+        'control'   =>array(
+            'label'      => esc_html__('Footer widgets text color','solido'),
+            'section'    => 'colors',
+            'settings'   => 'solido_options[colors][footer-widgets-text-color]',
+            'priority'   => '',
+            'description'=> esc_html__('Set Footer widgets text color','solido'),
+        )
+        
+    );
+
     //Footer text color
     $colors[] = array(
         'slug'      =>'solido_options[colors][footer-text-color]',
@@ -224,13 +224,7 @@
             'settings'   => 'solido_options[colors][footer-text-color]',
             'priority'   => '',
             'description'=> esc_html__('Set Footer text color','solido'),
-        ),
-        'selective_show' =>false,
-        'selective'      =>array(
-            'selector'   =>'',
-            'container_inclusive' => true,
-            'fallback_refresh' => false,
-        ),
+        )
         
     );
 
@@ -245,11 +239,6 @@
 
         // Set control
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $solido_colors['slug'].'_control', $solido_colors['control']));
-        
-        // set selectie refresh if is true defined
-		if( $solido_colors['selective_show'] ){
-
-			$wp_customize->selective_refresh->add_partial( $solido_colors['slug'], $solido_colors['selective']);
-		} 
+         
 		
     }
