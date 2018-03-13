@@ -35,7 +35,10 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation(array(
+				'prev_text' => __( '<i class="fas fa-long-arrow-alt-left"></i> Previous Entries' ,'solido'),
+				'next_text'	=> __( 'Next Entries <i class="fas fa-long-arrow-alt-right"></i>','solido' ),
+			) );
 
 		else :
 

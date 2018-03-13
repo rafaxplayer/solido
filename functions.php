@@ -157,13 +157,17 @@ function solido_scripts() {
 
 	$directory_uri = get_template_directory_uri();
 
-	wp_enqueue_style( 'solido-font-awesome', $directory_uri . '/assets/css/fontawesome-all.min.css' );
+	wp_enqueue_style( 'font-awesome', $directory_uri . '/assets/css/fontawesome-all.min.css' );
 
-	wp_enqueue_style( 'solido-slider-css', $directory_uri . '/assets/css/jquery.bxslider.min.css' );
+	wp_enqueue_style( 'jquery-slider-css', $directory_uri . '/assets/css/jquery.bxslider.min.css' );
 			
 	wp_enqueue_style( 'solido-style', get_stylesheet_uri() );
+	
+    wp_enqueue_style('-jquery-lightbox-css', $directory_uri . '/assets/css/lightbox.min.css'); // Enqueue it!
 
-	wp_enqueue_script( 'solido-slider', $directory_uri . '/assets/js/jquery.bxslider.min.js', array('jquery'), '4.2.12', true );
+	wp_enqueue_script( 'jquery-slider', $directory_uri . '/assets/js/jquery.bxslider.min.js', array('jquery'), '4.2.12', true );
+	
+	wp_enqueue_script('jquery-lightbox-js', $directory_uri . '/assets/js/lightbox.min.js', array('jquery'), '3.2.1',true); 
 
 	wp_enqueue_script( 'solido-main', $directory_uri . '/assets/js/main.js', array('jquery'), '20151215', true );
 		

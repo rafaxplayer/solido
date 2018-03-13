@@ -12,14 +12,12 @@ if ( ! function_exists( 'solido_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function solido_posted_on() {
-		
 		?>
-
 		<div class="post-date">
-			<a class="day" href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'));?>">
+			<a class="day" href="<?php echo esc_url(get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')));?>">
 				<span><?php the_time('d'); ?></span>
 			</a>
-			<a class="moth" href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'));?>">
+			<a class="moth" href="<?php echo esc_url(get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')));?>">
 				<span><?php the_time('M'); ?></span>
 			</a>
 		</div>
@@ -130,12 +128,12 @@ if ( ! function_exists( 'solido_excerpt' ) ) :
 
 	function solido_excerpt($num){
 
-		$limit = $num;
+		$limit = $num + 1;
 
 		$read_more = sprintf('<div class="more"><a href="%1$s">%2$s</a></div>',
 			esc_url( get_permalink( get_the_ID() ) ),
         	/* translators: %s: Name of current post */
-			__( 'READ MORE', 'solido' ));
+			__( 'Read More', 'solido' ));
 
 		$excerpt = explode(' ', get_the_excerpt(), $limit);
 			

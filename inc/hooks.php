@@ -85,21 +85,19 @@ if(!function_exists('solido_front_page_panels')){
                 $query_services = new WP_Query( array(
                     'post_type'     =>  'post',
                     'category_name' =>  $cat,
-                    'post_per_page' =>  6,
-
-                 ) );
+                 ));
 
                 if($query_services->have_posts()):
                     while ( $query_services->have_posts() ) : $query_services->the_post();
                     ?>
                     <div class="service-wrap">
-                        <div class="service-image" style="background-image:url(<?php echo the_post_thumbnail_url('solido-services');?>);">
+                        <div class="service-image" style="background-image:url(<?php echo esc_url(the_post_thumbnail_url('solido-services'));?>);">
                             
                             <?php the_title('<div class="info"><h2>','</h2></div>' );?>
                             
                         </div>
                         <div class="service-content">
-                            <?php solido_excerpt(15); ?>
+                            <?php solido_excerpt(20); ?>
                         </div>
                     </div>
                     <?php
@@ -115,10 +113,10 @@ if(!function_exists('solido_front_page_panels')){
         if(isset($solido_options['show-panel-team'])){
 
             if(true === $solido_options['show-panel-team']){
-                $textTeam = isset($solido_options['panel-text-team']) ? $solido_options['panel-text-team'] : _e('Team Us','solido');
+                $textTeam = isset($solido_options['panel-text-team']) ? $solido_options['panel-text-team'] : __('Team Us','solido');
             ?>
                 <section id="solido-team">
-                    <h2 id="team-text"><?php echo $textTeam ?></h2>
+                    <h2 id="team-text"><?php echo $textTeam; ?></h2>
                 <?php 
 
                    $cat = isset($solido_options['panel-team-cat']) && !empty($solido_options['panel-team-cat']) ? $solido_options['panel-team-cat'] : 'team';
@@ -168,8 +166,8 @@ if(!function_exists('solido_front_page_panels')){
                 <section id="solido-contact">
                     <div class="contact-wrap" style="background-image:url(<?php echo $imageContact; ?>);">
                         <div class="info">
-                            <h3 id="contact-text"><?php echo $textContact;?></h3>
-                            <a id="contact-button" href="<?php echo $linkContact; ?>"><?php echo $buttonContact; ?></a>
+                            <h3 id="contact-text"><?php echo esc_html($textContact);?></h3>
+                            <a id="contact-button" href="<?php echo esc_url($linkContact); ?>"><?php echo esc_html($buttonContact); ?></a>
                         </div>
                        
                     </div>

@@ -9,7 +9,7 @@
 	$wp_customize->add_setting( 'solido_options[sidebar_position]' , array(
 		'default' => $defaults['sidebar_position'],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'solido_sanitize_number_absint',
 	)); 
 	
 	$wp_customize->add_control( 'solido_sidebar_position_control', array(
@@ -29,11 +29,11 @@
     // position menu header
 	$wp_customize->add_setting( 'solido_options[header_menu_position]' , array(
 		'default' => $defaults['header_menu_position'],
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'solido_sanitize_number_absint',
 	)); 
 	
 	$wp_customize->add_control( 'solido_header_menu_position_control', array(
-		'label'      => __( 'Header menu position', 'solido' ),
+		'label'      => esc_html__( 'Header menu position', 'solido' ),
 		'section'    => 'solido_layouts_section',
 		'settings'   => 'solido_options[header_menu_position]',
         'type' => 'select',
@@ -43,8 +43,7 @@
             2 => esc_html__( 'Left', 'solido' ),
             3 => esc_html__( 'Center bottom', 'solido' ),
             4 => esc_html__( 'Center Top', 'solido' ),
-            
-        )
+        ),
     ));
 
     // position menu header
@@ -54,24 +53,23 @@
     ));
     
     $wp_customize->add_control( 'solido_show_slider_control', array(
-		'label'      => __( 'Show slider', 'solido' ),
+		'label'      => esc_html__( 'Show slider', 'solido' ),
 		'section'    => 'solido_layouts_section',
         'settings'   => 'solido_options[show-slider]',
-        'description'=> esc_html__('For use slider , create post with category "slider"','solido'),
+        'description'=> esc_html__('For use slider , create post with category "slider", only Front page','solido'),
         'type' => 'checkbox',
         'priority' => 102,
-                    
     ));
 
 
     // Blog style
 	$wp_customize->add_setting( 'solido_options[blog-list-style]' , array(
 		'default' => $defaults['blog-list-style'],
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'solido_sanitize_number_absint',
     ));
     
     $wp_customize->add_control( 'solido_blog-list-style_control', array(
-		'label'      => __( 'Blog list style', 'solido' ),
+		'label'      => esc_html__( 'Blog list style', 'solido' ),
 		'section'    => 'solido_layouts_section',
 		'settings'   => 'solido_options[blog-list-style]',
         'type'       => 'select',
@@ -80,8 +78,7 @@
             2 => esc_html__('List format', 'solido')
         ),
         'priority'   => 103,
-                    
     ));
     
     
-    ?>
+?>

@@ -18,7 +18,7 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'solido' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Results for: %s', 'solido' ), '<span>' . get_search_query() . '</span>' );
 				?></h1>
 			</header><!-- .page-header -->
 
@@ -35,7 +35,10 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation(array(
+				'prev_text' => __( '<i class="fas fa-long-arrow-alt-left"></i> Previous Entries' ,'solido'),
+				'next_text'	=> __( 'Next Entries <i class="fas fa-long-arrow-alt-right"></i>','solido' ),
+			));
 
 		else :
 

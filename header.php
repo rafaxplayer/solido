@@ -38,7 +38,7 @@
 
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<p class="site-description"><?php esc_html_e($description); /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
 				</div>
 				
@@ -58,6 +58,6 @@
 		
 	</header><!-- #masthead -->
 	
-	<?php //do_action( 'solido_show_slider' );?> 
+	<?php do_action( 'solido_show_slider' );?> 
 	<div id="content" class="site-content">
 		

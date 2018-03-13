@@ -68,7 +68,7 @@ if(!function_exists('solido_header_menu_position')){
                     justify-content: space-between;
                     flex-direction: column;
                     align-items: center;}
-                .site-branding {
+                .site-titles {
                     text-align:center;
                 }
             }";
@@ -82,7 +82,7 @@ if(!function_exists('solido_header_menu_position')){
                     justify-content: space-between;
                     flex-direction: column-reverse;
                     align-items: center;}
-                .site-branding {
+                .site-titles {
                     text-align:center;
                 }
             }";
@@ -98,25 +98,31 @@ if(!function_exists('solido_custom_colors_fonts')){
     function solido_custom_colors_fonts(){
 
         $font_face = solido_get_font_face();
-        $primary_color = solido_get_theme_mod('colors','primary-color');
-
+        $primary_color = solido_get_theme_mod('colors','primary-color');// ojo! se usa esta varible mas abajo con la funcion darken
         $outputh_css = "
-            .site-titles{display:". show_site_branding() ."}
+            :root{
+                --primary-color:".$primary_color.";
+                --titles-color:".solido_get_theme_mod('colors','titles-color').";
+                --links-color:".solido_get_theme_mod('colors','links-color').";
+            }
+                       
+            .site-titles{display:". show_site_branding() .";}
             .site-header{background-color:". $primary_color .";}
+            a{color:".solido_get_theme_mod('colors','links-color').";}
+            a:hover{color:".solido_get_theme_mod('colors','links-hover-color').";}
             .solido-front-page .service-wrap .service-content{background-color:". solido_get_theme_mod('colors','panel-services-color').";}
-            a{color:" . solido_get_theme_mod('colors','links-color') . "}
             .site-branding .site-title{font-size:". solido_get_theme_mod('typography','site_title_fontsize').";}
-            .site-branding .site-title a{font-family:".$font_face['site_title']."}
-            .site-branding .site-description{font-size:".solido_get_theme_mod('typography','site_description_fontsize').";font-family:" . $font_face['site_description'] .";}
-            a:hover{color:". solido_get_theme_mod('colors','links-hover-color').";}
+            .site-branding .site-title a{font-family:".$font_face['site_title'].";font-weight:". solido_get_theme_mod('typography','site_title_fontweight')."}
+            .site-branding .site-description{font-size:".solido_get_theme_mod('typography','site_description_fontsize').";font-family:" . $font_face['site_description'] .";font-weight:". solido_get_theme_mod('typography','site_description_fontweight')."}
             .site-title a,.site-description {color: #".get_header_textcolor().";}
             .post .post-date{background-color:". solido_get_theme_mod('colors','blog-dates-background-color') .";}
-            .entry-title,.entry-title a,.widget h2{ font-family:". $font_face['titles'] .";font-style:". solido_get_theme_mod('typography','titles_fontstyle') .";font-weight:". solido_get_theme_mod('typography','titles_fontweight').";}
+            .entry-title,.entry-title a,.widget h2{font-family:". $font_face['titles'] .";font-style:". solido_get_theme_mod('typography','titles_fontstyle') .";font-weight:". solido_get_theme_mod('typography','titles_fontweight').";}
+            .entry-title,.entry-title a{font-size:".solido_get_theme_mod('typography','titles_fontsize').";}
             .entry-content p{font-family:" . $font_face['texts'] .";color:".solido_get_theme_mod('colors','paragraphs-color').";font-size:". solido_get_theme_mod('typography','texts_fontsize').";font-style:".solido_get_theme_mod('typography','texts_fontstyle').";font-weight:". solido_get_theme_mod('typography','texts_fontweight')."}
             .entry-title,.entry-title a,.widget h2,#comments h2{color:". solido_get_theme_mod('colors','titles-color').";}
-            .entry-footer,.entry-footer a,.entry-meta,.entry-meta a{color:". solido_get_theme_mod('colors','links-color').";}
+            .entry-footer,.entry-footer a,.entry-meta,.entry-meta a{color:".solido_get_theme_mod('colors','links-color').";}
             .entry-footer a:hover,.entry-meta a:hover,.widget a:hover,.slider-item .more a:hover{color:".solido_get_theme_mod('colors','links-hover-color').";}
-            .widget h2:after,#comments h2:before,.solido-front-page #solido-team h2:after{background-color:".$primary_color."}
+            .widget h2:after,#comments h2:before,.solido-front-page #solido-team h2:after{background-color:". $primary_color .";}
             .widget a{color:#282828}
             .main-navigation ul a{color:". solido_get_theme_mod('colors','header-menu-text-color').";font-family:".$font_face['menu_header'].";font-style:". solido_get_theme_mod('typography','menu_header_fontstyle') .";font-weight:". solido_get_theme_mod('typography','menu_header_fontweight').";font-size:". solido_get_theme_mod('typography','menu_header_fontsize').";}
             .main-navigation ul a:hover{color:". solido_get_theme_mod('colors','header-menu-text-hover-color').";}
@@ -127,13 +133,15 @@ if(!function_exists('solido_custom_colors_fonts')){
                 .main-navigation>div>ul>li:hover{background-color:". solido_get_theme_mod('colors','header-menu-item-hover-color').";}
                 .main-navigation ul ul li:hover{background-color:". solido_darken_color(solido_get_theme_mod('colors','header-menu-item-hover-color')).";}
             }
-            .button-up,.menu-toggle{background-color:". $primary_color."}
+            .button-up,.menu-toggle{background-color:". $primary_color .";}
             .button-up:hover{background-color:".solido_darken_color($primary_color).";}
-            .comment-form .submit{border: 3px solid ".$primary_color.";color:".$primary_color."}
+            .comment-form .submit{border: 3px solid ". $primary_color .";color:". $primary_color .";}
             .comment-form .submit:hover{border: 3px solid ".solido_darken_color($primary_color).";color:".solido_darken_color($primary_color).";}
             .footer-widgets .widget,.footer-widgets .widget a,.footer-widgets .widget h2{color:". solido_get_theme_mod('colors','footer-widgets-text-color').";}
             .site-footer{background-color:". solido_get_theme_mod('colors','footer-background-color').";}
-            .site-info{color:". solido_get_theme_mod('colors','footer-text-color').";}";
+            .site-info{color:". solido_get_theme_mod('colors','footer-text-color').";}
+            #solido-team{background-color:".solido_get_theme_mod('colors','panel-team-background-color')."}
+            #solido-team h2{color:".solido_get_theme_mod('colors','panel-team-text-color')."}";
         
         return $outputh_css;
     }
@@ -149,8 +157,9 @@ if(!function_exists('solido_blog_style')){
 
             .blog-content {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-                grid-gap: 1.8rem 1.5rem;
+                grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+                grid-column-gap: 1.5rem;
+                margin:0 auto;
             }";
 
         $solido_options = get_theme_mod('solido_options');
@@ -162,17 +171,16 @@ if(!function_exists('solido_blog_style')){
         if($id && 2 == $id){
             $outputh_blog_style ="
                 .blog-content {
+                    display: -ms-grid;
                     display: grid;
+                    -ms-grid-columns: 1fr;
                     grid-template-columns: 1fr;
                     grid-row-gap: 2rem;
                     max-width:70rem;
                     margin: 0 auto;
                 }";
-
         }
-
         return $outputh_blog_style;
-
     }
 }
 
@@ -185,49 +193,27 @@ if(!function_exists('solido_sidebar_position')){
             return;
         } 
 
-        $outputh_position = ".site-content #secondary {
-            display: flex;
-            justify-content: flex-start;
-            align-items: start;
-            flex-wrap: wrap;
-        }
-        @media screen and (min-width: 768px) {
+        $outputh_position = "
+
             .site-content {
-                display: grid;
-                grid-template-areas: 'content sidebar';
-                grid-template-columns: 1fr minmax(240px, 25%);
-                grid-column-gap: 1.5rem;
-                
+                margin: 3rem auto 2rem;
+                padding: 20px;
+                padding: 1.25rem;
+                min-height: 320px;
+                min-height: 20rem
             }
+
             .site-content #secondary {
-                display: block;
-                grid-area: sidebar;
+               display:block;
             }
-            .site-content .content-area {
-                grid-area: content;
-            }
-        }";
-        
-        $solido_options = get_theme_mod('solido_options');
 
-        if(!isset($solido_options['sidebar_position'])){
-            return;
-        }
-        $id = $solido_options['sidebar_position'];
-        
-        if($id && 2 == $id){
-
-            $outputh_position = ".site-content #secondary {
-                display: flex;
-                justify-content: space-around;
-                align-items: start;
-                flex-wrap: wrap;
-            }
             @media screen and (min-width: 768px) {
                 .site-content {
+                    display: -ms-grid;
                     display: grid;
-                    grid-template-areas: 'sidebar content';
-                    grid-template-columns: minmax(240px, 25%) 1fr;
+                    grid-template-areas: 'content sidebar';
+                    -ms-grid-columns: 1fr minmax(240px, 25%);
+                    grid-template-columns: 1fr minmax(240px, 25%);
                     grid-column-gap: 1.5rem;
                 }
                 .site-content #secondary {
@@ -237,10 +223,43 @@ if(!function_exists('solido_sidebar_position')){
                 .site-content .content-area {
                     grid-area: content;
                 }
+                .solido-front-page .site-content {
+                    display: block;
+                }
             }";
+        
+        $solido_options = get_theme_mod('solido_options');
+
+        if(!isset($solido_options['sidebar_position'])){
+            return;
+        }
+        $id = $solido_options['sidebar_position'];
+        
+        if($id && 2 == $id){
+            // left position
+            $outputh_position = "
+                .site-content #secondary {
+                    display: block;
+                    
+                }
+                @media screen and (min-width: 768px) {
+                    .site-content {
+                        display: grid;
+                        grid-template-areas: 'sidebar content';
+                        grid-template-columns: minmax(240px, 25%) 1fr;
+                        grid-column-gap: 1.5rem;
+                    }
+                    .site-content #secondary {
+                        
+                        grid-area: sidebar;
+                    }
+                    .site-content .content-area {
+                        grid-area: content;
+                    }
+                }";
         }
         if($id && 3 == $id){
-
+            //bottom position
             $outputh_position = "
                     .site-content #secondary {
                         display: flex;
@@ -249,8 +268,14 @@ if(!function_exists('solido_sidebar_position')){
                         padding-top: 2rem;
                         border-top: solid 1px #3333331a;
                     }
+                    
                     @media screen and (min-width: 768px){
-                        
+                        .site-content {
+                            display: grid;
+                            grid-template-areas: 'content' 'sidebar';
+                            grid-template-columns: 1fr;
+                            grid-column-gap: 1.5rem;
+                        }
                         .site-content #secondary {
                             justify-content: space-around;
                             flex-direction:row;
@@ -260,11 +285,16 @@ if(!function_exists('solido_sidebar_position')){
                         .site-content #secondary .widget{
                             flex:0 0 45%;
                         }
+
                     }";
         }
         if($id && 4 == $id){
-            
-            $outputh_position = ".site-content #secondary{display:none};";
+            //hidde position
+            $outputh_position = "
+            .site-content{
+                display:block;
+            }
+            .site-content #secondary{display:none};";
         }
         return $outputh_position;
 

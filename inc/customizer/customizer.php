@@ -40,24 +40,28 @@ function solido_customize_register( $wp_customize ) {
 	}
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_control( 'blogname' )->priority         	= 30;
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_control( 'header_textcolor' )->description = __('Set site title & Description text color','solido');
+	$wp_customize->get_control( 'background_color' )->description = __('Set site background color','solido');
+	$wp_customize->get_control( 'custom_logo' )->description = __('Image file size 250px x 250px','solido');
 	$wp_customize->remove_control( 'display_header_text' );
-
+	
 	// position menu header
-	$wp_customize->add_setting( 'solido-show-site-branding' , array(
+	 $wp_customize->add_setting( 'solido-show-site-branding' , array(
 		'default' => $defaults['show-site-branding'],
 		'sanitize_callback' => 'solido_sanitize_checkbox',
     ));
     
-    $wp_customize->add_control( 'solido_show_slider_control', array(
+    $wp_customize->add_control( 'solido_show_site_branding_control', array(
 		'label'      => esc_html__( 'Show or hide title and description','solido' ),
 		'section'    => 'title_tagline',
         'settings'   => 'solido-show-site-branding',
         'type' => 'checkbox',
-        'priority' =>20,
+        'priority' => 20,
                     
-    ));
+    ));  
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 

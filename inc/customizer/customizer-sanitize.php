@@ -4,11 +4,6 @@ function solido_text_sanitization( $text ) {
 	return sanitize_text_field( $text );
 }
 
-function solido_fontsize_sanitization($size){
-	
-	return $size . "px";
-
-}
 
 function solido_sanitize_checkbox($value){
 
@@ -36,7 +31,12 @@ function solido_darken_color($rgb, $darker=2) {
 
 	return $hash.$R.$G.$B;
 }
-
+function solido_sanitize_hex_color( $hex_color, $setting ) {
+	// Sanitize $input as a hex value without the hash prefix.
+	$hex_color = sanitize_hex_color( $hex_color );
+	// If $input is a valid hex value, return it; otherwise, return the default.
+	return ( ! null( $hex_color ) ? $hex_color : $setting->default );
+}
 function solido_sanitize_url( $url ) {
 	return esc_url_raw( $url );
 }
@@ -47,4 +47,12 @@ function solido_sanitize_dropdown_pages( $page_id, $setting ) {
   
 	// If $page_id is an ID of a published page, return it; otherwise, return the default.
 	return ( 'publish' == get_post_status( $page_id ) ? get_permalink($page_id) : '#' );
+}
+
+function solido_sanitize_number_absint( $number, $setting ) {
+	// Ensure $number is an absolute integer (whole number, zero or greater).
+	$number = absint( $number );
+	
+	// If the input is an absolute integer, return it; otherwise, return the default
+	return ( $number ? $number : $setting->default );
 }

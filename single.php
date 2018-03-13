@@ -15,11 +15,11 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'template-parts/content');
 
 			the_post_navigation(array(
-				'prev_text'                  => __( '<i class="fas fa-long-arrow-alt-left"></i> Look %title' ,'solido'),
-				'next_text'                  => __( 'Look %title <i class="fas fa-long-arrow-alt-right"></i>','solido' ),
+				'prev_text'  => __( '<i class="fas fa-long-arrow-alt-left"></i> Previous Entry' ,'solido'),
+				'next_text'  => __( 'Next Entry <i class="fas fa-long-arrow-alt-right"></i>','solido' ),
 			) );
 
 			// If comments are open or we have at least one comment, load up the comment template.

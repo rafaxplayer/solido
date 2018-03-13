@@ -26,7 +26,7 @@ $wp_customize->add_setting( 'solido_options[show-panel-services]' , array(
 ));
 
 $wp_customize->add_control( 'solido_show_panel_services_control', array(
-    'label'      => __( 'Show panel services', 'solido' ),
+    'label'      => esc_html__( 'Show panel services', 'solido' ),
     'section'    => 'solido_panel_services_section',
     'settings'   => 'solido_options[show-panel-services]',
     'description'=> esc_html__('Show or hide panel services in to front page','solido'),
@@ -41,7 +41,7 @@ $wp_customize->add_setting( 'solido_options[panel-services-cat]' , array(
 ));
 
 $wp_customize->add_control( 'solido_panel_services_control', array(
-    'label'      => __( 'Category for display services ', 'solido' ),
+    'label'      => esc_html__( 'Category for display services ', 'solido' ),
     'section'    => 'solido_panel_services_section',
     'settings'   => 'solido_options[panel-services-cat]',
     'description'=> esc_html__('Enter category name for display services items (default "service")','solido'),
@@ -54,7 +54,7 @@ $wp_customize->add_setting( 'solido_options[colors][panel-services-color]' , arr
 ));
 
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,'solido_panel_services_color_control', array(
-    'label'      => __( 'Color for panel services ', 'solido' ),
+    'label'      => esc_html__( 'Color for panel services ', 'solido' ),
     'section'    => 'solido_panel_services_section',
     'settings'   => 'solido_options[colors][panel-services-color]',
     'description'=> esc_html__('Set color for panel service','solido'),
@@ -77,7 +77,7 @@ $wp_customize->add_setting( 'solido_options[show-panel-team]' , array(
 ));
 
 $wp_customize->add_control( 'solido_show_panel_team_control', array(
-    'label'      => __( 'Show panel team', 'solido' ),
+    'label'      => esc_html__( 'Show panel team', 'solido' ),
     'section'    => 'solido_panel_team_section',
     'settings'   => 'solido_options[show-panel-team]',
     'description'=> esc_html__('Show or hide panel team in to front page','solido'),
@@ -92,7 +92,7 @@ $wp_customize->add_setting( 'solido_options[panel-text-team]' , array(
 ));
 
 $wp_customize->add_control( 'solido_text_panel_team_control', array(
-    'label'      => __( 'Text for panel team', 'solido' ),
+    'label'      => esc_html__( 'Text for panel team', 'solido' ),
     'section'    => 'solido_panel_team_section',
     'settings'   => 'solido_options[panel-text-team]',
     'description'=> esc_html__('Set text for panel team','solido'),
@@ -106,11 +106,39 @@ $wp_customize->add_setting( 'solido_options[panel-team-cat]' , array(
 ));
 
 $wp_customize->add_control( 'solido_panel_team_control', array(
-    'label'      => __( 'Category for display team items ', 'solido' ),
+    'label'      => esc_html__( 'Category for display team items ', 'solido' ),
     'section'    => 'solido_panel_team_section',
     'settings'   => 'solido_options[panel-team-cat]',
     'description'=> esc_html__('Enter category name for display team items (default "team")','solido'),
 ));
+
+//Text color panel team
+$wp_customize->add_setting('solido_options[colors][panel-team-text-color]',array(
+    'default'  => $defaults['colors']['panel-team-text-color'],
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,'solido_panel-team-text-color_control',array(
+    'label'      => esc_html__('Panel team text color','solido'),
+    'section'    => 'solido_panel_team_section',
+    'settings'   => 'solido_options[colors][panel-team-text-color]',
+    'priority'   => '',
+    'description'=> esc_html__('Set panel team text color','solido'),
+)));
+
+//Background color panel team
+$wp_customize->add_setting('solido_options[colors][panel-team-background-color]',array(
+    'default'  => $defaults['colors']['panel-team-background-color'],
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,'solido_paenl_team_background_color_control',array(
+    'label'      => esc_html__('Panel team background color','solido'),
+    'section'    => 'solido_panel_team_section',
+    'settings'   => 'solido_options[colors][panel-team-background-color]',
+    'priority'   => '',
+    'description'=> esc_html__('Set panel team background color','solido'),
+)));
 
 
 
@@ -181,7 +209,7 @@ $wp_customize->add_control( 'solido_button_panel_contact_control', array(
 ));
 
 //link to page contact
-$wp_customize->add_setting( 'solido_options[panel-link-contact]', array(
+ $wp_customize->add_setting( 'solido_options[panel-link-contact]', array(
     'default' => $defaults['panel-link-contact'],
     'sanitize_callback' => 'solido_sanitize_dropdown_pages',
 ));
@@ -192,7 +220,7 @@ $wp_customize->add_control( 'solido_link_panel_contact_control', array(
     'section'   => 'solido_panel_contact_section',
     'settings'  => 'solido_options[panel-link-contact]',
     'description'=> esc_html__('Set page for panel contact','solido'),
-)); 
+));  
 
 ?>
 

@@ -26,78 +26,78 @@
     );
 
     $font_sizes_texts= array(
-            '.3em' => '.3',
-            '.4em' => '.4',
-            '.5em' => '.5',
-            '.6em' => '.6',
-            '.7em' => '.7',
-            '.8em' => '.8',
-            '.9em' => '.9',
-            '1em' => '1',
-            '1.1em' => '1.1',
-            '1.2em' => '1.2',
-            '1.3em' => '1.3',
-            '1.4em' => '1.4',
-            '1.5em' => '1.5',
-            '1.6em' => '1.6',
-            '1.7em' => '1.7',
-            '1.8em' => '1.8',
-            '1.9em' => '1.9',
-            '2em' => '2',
-            '2.5em' => '2.5',
-            '3em' => '3',
-            '3.5em' => '3.5',
-            '4em' => '4',
-            '4.5em' => '4.5',
-            '5em' => '5',
-            '5.5em' => '5.5',
-            '6em' => '6',
+            '.3rem' => '.3',
+            '.4rem' => '.4',
+            '.5rem' => '.5',
+            '.6rem' => '.6',
+            '.7rem' => '.7',
+            '.8rem' => '.8',
+            '.9rem' => '.9',
+            '1rem' => '1',
+            '1.1rem' => '1.1',
+            '1.2rem' => '1.2',
+            '1.3rem' => '1.3',
+            '1.4rem' => '1.4',
+            '1.5rem' => '1.5',
+            '1.6rem' => '1.6',
+            '1.7rem' => '1.7',
+            '1.8rem' => '1.8',
+            '1.9rem' => '1.9',
+            '2rem' => '2',
+            '2.5rem' => '2.5',
+            '3rem' => '3',
+            '3.5rem' => '3.5',
+            '4rem' => '4',
+            '4.5rem' => '4.5',
+            '5rem' => '5',
+            '5.5rem' => '5.5',
+            '6rem' => '6',
         );
 
     $font_size_header= array(
-            '1em' => '1',
-            '1.1em' => '1.1',
-            '1.2em' => '1.2',
-            '1.3em' => '1.3',
-            '1.4em' => '1.4',
-            '1.5em' => '1.5',
-            '1.6em' => '1.6',
-            '1.7em' => '1.7',
-            '1.8em' => '1.8',
-            '1.9em' => '1.9',
-            '2em' => '2',
-            '2.1em' => '2.1',
-            '2.2em' => '2.2',
-            '2.3em' => '2.3',
-            '2.4em' => '2.4',
-            '2.5em' => '2.5',
-            '2.6em' => '2.6',
-            '2.7em' => '2.7',
-            '2.8em' => '2.8',
-            '2.9em' => '2.9',
-            '3em' => '3',
-            '3.1em' => '3.1',
-            '3.2em' => '3.2',
-            '3.3em' => '3.3',
-            '3.4em' => '3.4',
-            '3.5em' => '3.5',
-            '3.6em' => '3.6',
-            '3.7em' => '3.7',
-            '3.8em' => '3.8',
-            '3.9em' => '3.9',
-            '4em' => '4',
-            '4.1em' => '4.1',
-            '4.2em' => '4.2',
-            '4.3em' => '4.3',
-            '4.4em' => '4.4',
-            '4.5em' => '4.5',
-            '4.6em' => '4.6',
-            '4.7em' => '4.7',
-            '4.8em' => '4.8',
-            '4.9em' => '4.9',
-            '5em' => '5',
-            '5.5em' => '5.5',
-            '6em' => '6',
+            '1rem' => '1',
+            '1.1rem' => '1.1',
+            '1.2rem' => '1.2',
+            '1.3rem' => '1.3',
+            '1.4rem' => '1.4',
+            '1.5rem' => '1.5',
+            '1.6rem' => '1.6',
+            '1.7rem' => '1.7',
+            '1.8rem' => '1.8',
+            '1.9rem' => '1.9',
+            '2rem' => '2',
+            '2.1rem' => '2.1',
+            '2.2rem' => '2.2',
+            '2.3rem' => '2.3',
+            '2.4rem' => '2.4',
+            '2.5rem' => '2.5',
+            '2.6rem' => '2.6',
+            '2.7rem' => '2.7',
+            '2.8rem' => '2.8',
+            '2.9rem' => '2.9',
+            '3rem' => '3',
+            '3.1rem' => '3.1',
+            '3.2rem' => '3.2',
+            '3.3rem' => '3.3',
+            '3.4rem' => '3.4',
+            '3.5rem' => '3.5',
+            '3.6rem' => '3.6',
+            '3.7rem' => '3.7',
+            '3.8rem' => '3.8',
+            '3.9rem' => '3.9',
+            '4rem' => '4',
+            '4.1rem' => '4.1',
+            '4.2rem' => '4.2',
+            '4.3rem' => '4.3',
+            '4.4rem' => '4.4',
+            '4.5rem' => '4.5',
+            '4.6rem' => '4.6',
+            '4.7rem' => '4.7',
+            '4.8rem' => '4.8',
+            '4.9rem' => '4.9',
+            '5rem' => '5',
+            '5.5rem' => '5.5',
+            '6rem' => '6',
         );
 
     $font_styles = array(
@@ -168,6 +168,25 @@
         )
     );
 
+    //Font size for titles 
+    $wp_customize->add_setting(
+        'solido_options[typography][titles_fontsize]', array(
+            'default' => $defaults['typography']['titles_fontsize'],
+            'sanitize_callback' => 'solido_text_sanitization',
+        )
+    );
+
+    $wp_customize->add_control(
+        'solido_titles_font_size', array(
+            'label' => __( 'Font size for Titles', 'solido' ),
+            'section' => 'solido_typography_titles_section',
+            'settings' => 'solido_options[typography][titles_fontsize]',
+            'type' => 'select',
+            'choices' => $font_sizes_texts,
+            
+        )
+    );
+
     // Font weigth for titles
     $wp_customize->add_setting(
         'solido_options[typography][titles_fontweight]', array(
@@ -209,7 +228,7 @@
      * SITE TITLE & DESCRIPTION
      */
     $wp_customize->add_section( 'solido_typography_branding_section', array(
-        'title' => esc_html__( 'Site Branding', 'solido' ),
+        'title' => esc_html__( 'Site Title and Description', 'solido' ),
         'panel' =>  'solido_typography_panel',
         'description' => esc_html__('Set typography settings for header site title and description','solido')
     ));
@@ -271,6 +290,24 @@
         )
     );
 
+    // Font weigth site title
+    $wp_customize->add_setting(
+        'solido_options[typography][site_title_fontweight]', array(
+            'default' => $defaults['typography']['site_title_fontweight'],
+            'sanitize_callback' => 'solido_text_sanitization',
+        )
+    );
+
+    $wp_customize->add_control(
+        'solido_site_title_fontweight', array(
+            'label' => __( 'Site title font weight', 'solido' ),
+            'section' => 'solido_typography_branding_section',
+            'type' => 'select',
+            'settings' => 'solido_options[typography][site_title_fontweight]',
+            'choices' => $font_weights,
+        )
+    );
+
     // Font family for site description
     $wp_customize->add_setting(
         'solido_options[typography][site_description_face]', array(
@@ -325,7 +362,23 @@
         )
     );
 
+    // Font weigth site description
+    $wp_customize->add_setting(
+        'solido_options[typography][site_description_fontweight]', array(
+            'default' => $defaults['typography']['site_description_fontweight'],
+            'sanitize_callback' => 'solido_text_sanitization',
+        )
+    );
 
+    $wp_customize->add_control(
+        'solido_site_description_fontweight', array(
+            'label' => __( 'Site description font weight', 'solido' ),
+            'section' => 'solido_typography_branding_section',
+            'type' => 'select',
+            'settings' => 'solido_options[typography][site_description_fontweight]',
+            'choices' => $font_weights,
+        )
+    );
 
     /**
      * MENU HEADER
@@ -474,7 +527,7 @@
     );
 
 
-     // Google Font size texts 
+     //Font size texts 
      $wp_customize->add_setting(
         'solido_options[typography][texts_fontsize]', array(
             'default' => $defaults['typography']['texts_fontsize'],

@@ -1,7 +1,7 @@
 === solido ===
 
 Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-header,custom-colors, custom-menu, footer-widgets, featured-images, threaded-comments, theme-options, full-width-template, right-sidebar, left-sidebar,grid-layout, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.8
@@ -13,7 +13,7 @@ A starter theme called solido.
 
 == Description ==
 
-Description
+Solid theme with easy and intuitive dexterity, focused for personal or business blog with initial page where to establish services, equipment and contact.
 
 == Installation ==
 
@@ -39,4 +39,5 @@ solido includes support for Infinite Scroll in Jetpack.
 * JQuery Easing http://gsgd.co.uk/sandbox/jquery/easing/ Open source under the BSD License. 
 * Font Awesome 5.0.0 by @davegandy http://fontawesome.io http://fontawesome.io/license
 * bxSlider adds the responsive slider by Steven Wanderski https://bxslider.com/ licensed the MIT (http://opensource.org/licenses/MIT).
+* lightbox  Copyright (c) 2015 Lokesh Dhakar License: MIT Source: https://github.com/lokesh/lightbox2/
 
