@@ -1,11 +1,9 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: solido\n"
 "POT-Creation-Date: 2018-03-16 15:25+0100\n"
-"PO-Revision-Date: 2018-03-16 15:25+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2018-03-19 10:40+0100\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,32 +16,36 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: es_ES\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "Oops No se encontró el contenido."
 
 #: 404.php:21
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Parece que no se encontró nada en esta ubicación. Tal vez intente uno de los "
+"siguientes enlaces o una búsqueda?"
 
 #: archive.php:39 search.php:39
 msgid "<i class=\"fas fa-long-arrow-alt-left\"></i> Previous Entries"
-msgstr ""
+msgstr "Entradas anteriores"
 
 #: archive.php:40 search.php:40
 msgid "Next Entries <i class=\"fas fa-long-arrow-alt-right\"></i>"
-msgstr ""
+msgstr "Entradas siguientes <i class=\"fas fa-long-arrow-alt-right\"></i>"
 
 #. translators: 1: title.
 #: comments.php:34
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
+msgstr "Un comentario en &ldquo;%1$s&rdquo;"
 
 #. translators: 1: comment count number, 2: title.
 #: comments.php:40
@@ -51,12 +53,12 @@ msgstr ""
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s Comentario en &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Comentarios en &ldquo;%2$s&rdquo;"
 
 #: comments.php:63
 msgid "Comments are closed."
-msgstr ""
+msgstr "Los comentarios están cerrados."
 
 #: footer.php:29
 #, php-format
@@ -70,15 +72,15 @@ msgstr ""
 
 #: functions.php:51
 msgid "Header menu"
-msgstr ""
+msgstr "Menú de cabecera"
 
 #: functions.php:112
 msgid "Sidebar"
-msgstr ""
+msgstr "Barra lateral"
 
 #: functions.php:114 functions.php:124 functions.php:134 functions.php:144
 msgid "Add widgets here."
-msgstr ""
+msgstr "Añade widgets aquí."
 
 #: functions.php:122
 msgid "Footer widgets 1"
@@ -94,210 +96,211 @@ msgstr ""
 
 #: header.php:25
 msgid "Skip to content"
-msgstr ""
+msgstr "Saltar al contenido"
 
 #: header.php:48
 msgid "Primary Menu"
-msgstr ""
+msgstr "Navegación Principal"
 
 #: inc/customizer/customizer-colors.php:11
 msgid "Header Background and bars color"
-msgstr ""
+msgstr "Menú de cabecera y colores de barras"
 
 #: inc/customizer/customizer-colors.php:15
 msgid "Set header background color when header image is not defined"
 msgstr ""
+"Establece color de fondo , cuando la imagen de cabecera no esta definida"
 
 #: inc/customizer/customizer-colors.php:27
 msgid "Header menu text color"
-msgstr ""
+msgstr "Menú de cabecera color de texto"
 
 #: inc/customizer/customizer-colors.php:31
 msgid "Set Header menu text color"
-msgstr ""
+msgstr "Establece el color del texto en el menú de cabecera"
 
 #: inc/customizer/customizer-colors.php:41
 msgid "Header menu hover text color"
-msgstr ""
+msgstr "Establece el color del texto al pasar en el menú de cabecera"
 
 #: inc/customizer/customizer-colors.php:45
 msgid "Set Header menu hover items color"
-msgstr ""
+msgstr "Establece color de fondo del elemento al pasar"
 
 #: inc/customizer/customizer-colors.php:55
 msgid "Header menu item hover background color"
-msgstr ""
+msgstr "Color de fondo en el elemento del menú de cabecera al pasar"
 
 #: inc/customizer/customizer-colors.php:59
 msgid "Set background color on Header menu item hover "
-msgstr ""
+msgstr "Establece color de fondo en el elemento del menú de cabecera al pasar "
 
 #: inc/customizer/customizer-colors.php:69
 msgid "Active menu item color"
-msgstr ""
+msgstr "Color en el elemento activo"
 
 #: inc/customizer/customizer-colors.php:73
 msgid "Set active menu item color"
-msgstr ""
+msgstr "Establece color elemento activo"
 
 #: inc/customizer/customizer-colors.php:83
 msgid "Titles color"
-msgstr ""
+msgstr "Color de los títulos"
 
 #: inc/customizer/customizer-colors.php:87
 msgid "Set blog and pages titles color"
-msgstr ""
+msgstr "Establece color para los títulos en paginas y entradas"
 
 #: inc/customizer/customizer-colors.php:97
 msgid "Blog background dates color"
-msgstr ""
+msgstr "Color de fondo en las fechas del blog"
 
 #: inc/customizer/customizer-colors.php:101
 msgid "Set blog background dates color"
-msgstr ""
+msgstr "Establece color de fondo en las fechas del blog"
 
 #: inc/customizer/customizer-colors.php:112
 msgid "Texts color"
-msgstr ""
+msgstr "Color de los textos"
 
 #: inc/customizer/customizer-colors.php:116
 msgid "Set blog and pages texts color"
-msgstr ""
+msgstr "Establece color de los textos en las entradas y paginas"
 
 #: inc/customizer/customizer-colors.php:127
 msgid "Links color"
-msgstr ""
+msgstr "Color de los enlaces"
 
 #: inc/customizer/customizer-colors.php:131
 msgid "Set links color"
-msgstr ""
+msgstr "Establece color de los enlaces"
 
 #: inc/customizer/customizer-colors.php:141
 msgid "Links hover color"
-msgstr ""
+msgstr "Color de los enlaces al pasar"
 
 #: inc/customizer/customizer-colors.php:145
 msgid "Set links hover color"
-msgstr ""
+msgstr "Establece color de los enlaces al pasar"
 
 #: inc/customizer/customizer-colors.php:156
 msgid "Footer background color"
-msgstr ""
+msgstr "Pie de pagina, color de fondo"
 
 #: inc/customizer/customizer-colors.php:160
 msgid "Set Footer background color"
-msgstr ""
+msgstr "Establece color de fondo pie de pagina"
 
 #: inc/customizer/customizer-colors.php:170
 msgid "Footer widgets text color"
-msgstr ""
+msgstr "Pie de pagina widgets color de texto"
 
 #: inc/customizer/customizer-colors.php:174
 msgid "Set Footer widgets text color"
-msgstr ""
+msgstr "Establece color de texto para los widgets del pie de pagina"
 
 #: inc/customizer/customizer-colors.php:184
 msgid "Footer text color"
-msgstr ""
+msgstr "Pie de pagina color de textos"
 
 #: inc/customizer/customizer-colors.php:188
 msgid "Set Footer text color"
-msgstr ""
+msgstr "Establece color de textos en el pie de pagina"
 
 #: inc/customizer/customizer-defaults.php:60 inc/hooks.php:116
 msgid "Team Us"
-msgstr ""
+msgstr "Nuestro equipo"
 
 #: inc/customizer/customizer-defaults.php:61
 msgid "Want to know more about us?"
-msgstr ""
+msgstr "¿Quieres saber mas sobre nosotros?"
 
 #: inc/customizer/customizer-defaults.php:62
 msgid "Contact us?"
-msgstr ""
+msgstr "Contáctanos?"
 
 #: inc/customizer/customizer-footer.php:4
 msgid "Footer settings"
-msgstr ""
+msgstr "Ajustes pie de pagina"
 
 #: inc/customizer/customizer-footer.php:15
 msgid "Show footer copy"
-msgstr ""
+msgstr "Mostrar copyright del pie de pagina"
 
 #: inc/customizer/customizer-footer.php:30
 msgid "Footer text"
-msgstr ""
+msgstr "Pie de pagina texto"
 
 #: inc/customizer/customizer-front-page.php:6
 msgid "Theme Front Page"
-msgstr ""
+msgstr "Pagina frontal del tema"
 
 #: inc/customizer/customizer-front-page.php:7
 msgid ""
 "To establish adjustments for the static page template of the tem, it is "
 "necessary to have in the section homepage settins marked \"a static page\" "
 "and choose a page."
-msgstr ""
+msgstr "Establece ajustes para la pagina frontal del tema."
 
 #: inc/customizer/customizer-front-page.php:17
 msgid "Panel Services Settings"
-msgstr ""
+msgstr "Ajustes del panel servicios"
 
 #: inc/customizer/customizer-front-page.php:29
 msgid "Show panel services"
-msgstr ""
+msgstr "Mostrar panel servicios"
 
 #: inc/customizer/customizer-front-page.php:32
 msgid "Show or hide panel services in to front page"
-msgstr ""
+msgstr "Mostrar u ocultar panel servicios en la pagina frontal"
 
 #: inc/customizer/customizer-front-page.php:44
 msgid "Category for display services "
-msgstr ""
+msgstr "Categoría para los servicios"
 
 #: inc/customizer/customizer-front-page.php:47
 msgid "Enter category name for display services items (default \"service\")"
-msgstr ""
+msgstr "Introduce la categoría que usaras para mostrar los servicios."
 
 #: inc/customizer/customizer-front-page.php:57
 msgid "Color for panel services "
-msgstr ""
+msgstr "Color del panel servicios"
 
 #: inc/customizer/customizer-front-page.php:60
 msgid "Set color for panel service"
-msgstr ""
+msgstr "Establece color para el panel servicios"
 
 #: inc/customizer/customizer-front-page.php:69
 msgid "Panel Team Settings"
-msgstr ""
+msgstr "Ajustes del panel de servicios"
 
 #: inc/customizer/customizer-front-page.php:80
 msgid "Show panel team"
-msgstr ""
+msgstr "Mostrar panel del equipo"
 
 #: inc/customizer/customizer-front-page.php:83
 msgid "Show or hide panel team in to front page"
-msgstr ""
+msgstr "Mostrar u ocultar el panel del equipo"
 
 #: inc/customizer/customizer-front-page.php:95
 msgid "Text for panel team"
-msgstr ""
+msgstr "Texto para el panel equipo"
 
 #: inc/customizer/customizer-front-page.php:98
 msgid "Set text for panel team"
-msgstr ""
+msgstr "Establece texto para el panel equipo"
 
 #: inc/customizer/customizer-front-page.php:109
 msgid "Category for display team items "
-msgstr ""
+msgstr "Categoría para las entradas del equipo"
 
 #: inc/customizer/customizer-front-page.php:112
 msgid "Enter category name for display team items (default \"team\")"
-msgstr ""
+msgstr "Introduce categoría para las entradas del equipo."
 
 #: inc/customizer/customizer-front-page.php:122
 msgid "Panel team text color"
-msgstr ""
+msgstr "Color del texto para el panel equipo"
 
 #: inc/customizer/customizer-front-page.php:126
 msgid "Set panel team text color"
@@ -305,282 +308,286 @@ msgstr ""
 
 #: inc/customizer/customizer-front-page.php:136
 msgid "Panel team background color"
-msgstr ""
+msgstr "Color de fondo para el panel equipo"
 
 #: inc/customizer/customizer-front-page.php:140
 msgid "Set panel team background color"
-msgstr ""
+msgstr "Establece color de fondo para el panel equipo"
 
 #: inc/customizer/customizer-front-page.php:150
 msgid "Panel Contact Settings"
-msgstr ""
+msgstr "Panel contacto ajustes"
 
 #: inc/customizer/customizer-front-page.php:161
 msgid "Show panel contact"
-msgstr ""
+msgstr "Mostrar panel de contacto"
 
 #: inc/customizer/customizer-front-page.php:164
 msgid "Show or hide panel contact in to front page"
-msgstr ""
+msgstr "Mostrar u ocultar el panel de contacto"
 
 #: inc/customizer/customizer-front-page.php:175
 msgid "Image for background panel contact"
-msgstr ""
+msgstr "Imagen de fondo para el panel de contacto"
 
 #: inc/customizer/customizer-front-page.php:178
 msgid "Set Image for background panel contact"
-msgstr ""
+msgstr "Establece imagen de fondo para el panel de contacto"
 
 #: inc/customizer/customizer-front-page.php:189
 msgid "Text for panel contact"
-msgstr ""
+msgstr "Texto para el panel de contacto"
 
 #: inc/customizer/customizer-front-page.php:192
 msgid "Set text for panel contact"
-msgstr ""
+msgstr "Establece texto para el panel de contacto"
 
 #: inc/customizer/customizer-front-page.php:204
 msgid "Button text for panel contact"
-msgstr ""
+msgstr "Texto para el botón del panel contacto"
 
 #: inc/customizer/customizer-front-page.php:207
 msgid "Set button text for panel contact"
-msgstr ""
+msgstr "Establece texto para el botón del panel contacto"
 
 #: inc/customizer/customizer-front-page.php:218
 msgid "Your page contains the contact form"
-msgstr ""
+msgstr "Tu pagina que contiene el formulario de contacto"
 
 #: inc/customizer/customizer-front-page.php:222
 msgid "Set page for panel contact"
-msgstr ""
+msgstr "Establece pagina para el panel de contacto"
 
 #: inc/customizer/customizer-layouts.php:4
 msgid "Layouts settings"
-msgstr ""
+msgstr "Ajustes de diseño"
 
 #: inc/customizer/customizer-layouts.php:16
 msgid "Sidebar position"
-msgstr ""
+msgstr "Posición barra lateral"
 
 #: inc/customizer/customizer-layouts.php:22
 msgid "Right Sidebar (default)"
-msgstr ""
+msgstr "Barra lateral derecha"
 
 #: inc/customizer/customizer-layouts.php:23
 msgid "Left Sidebar"
-msgstr ""
+msgstr "Barra lateral izquierda"
 
 #: inc/customizer/customizer-layouts.php:24
 msgid "Bottom Sidebar"
-msgstr ""
+msgstr "Barra lateral abajo"
 
 #: inc/customizer/customizer-layouts.php:25
 msgid "Hidde Sidebar"
-msgstr ""
+msgstr "Ocultar barra lateral"
 
 #: inc/customizer/customizer-layouts.php:36
 msgid "Header menu position"
-msgstr ""
+msgstr "Posición del menú de cabecera"
 
 #: inc/customizer/customizer-layouts.php:42
 msgid "Right (default)"
-msgstr ""
+msgstr "Derecha ( Por defecto)"
 
 #: inc/customizer/customizer-layouts.php:43
 msgid "Left"
-msgstr ""
+msgstr "Inquierda"
 
 #: inc/customizer/customizer-layouts.php:44
 msgid "Center bottom"
-msgstr ""
+msgstr "Centrado abajo"
 
 #: inc/customizer/customizer-layouts.php:45
 msgid "Center Top"
-msgstr ""
+msgstr "Centrado arriba"
 
 #: inc/customizer/customizer-layouts.php:56
 msgid "Show slider"
-msgstr ""
+msgstr "Mostrar control deslizante"
 
 #: inc/customizer/customizer-layouts.php:59
 msgid "For use slider , create post with category \"slider\", only Front page"
 msgstr ""
+"Para usar el control deslizante , crea entradas con categoría \"slider\" , "
+"solo en la pagina frontal"
 
 #: inc/customizer/customizer-layouts.php:72
 msgid "Blog list style"
-msgstr ""
+msgstr "Estilo de la lista del blog"
 
 #: inc/customizer/customizer-layouts.php:77
 msgid "Grid format (default)"
-msgstr ""
+msgstr "Formato grilla (Por defecto)"
 
 #: inc/customizer/customizer-layouts.php:78
 msgid "List format"
-msgstr ""
+msgstr "Formato lista"
 
 #: inc/customizer/customizer-typography.php:122
 msgid "Typography settings"
-msgstr ""
+msgstr "Ajustes de tipografia"
 
 #: inc/customizer/customizer-typography.php:131
 msgid "Titles"
-msgstr ""
+msgstr "Títulos"
 
 #: inc/customizer/customizer-typography.php:133
 msgid "Set typography settings for titles of page , post and widgets"
 msgstr ""
+"Establece ajustes de tipografía para títulos de las paginas , entradas y "
+"widgets"
 
 #: inc/customizer/customizer-typography.php:146
 msgid "Typography Face for the titles"
-msgstr ""
+msgstr "Fuente para los títulos"
 
 #: inc/customizer/customizer-typography.php:164
 msgid "Google font for Titles"
-msgstr ""
+msgstr "Google Font para títulos"
 
 #: inc/customizer/customizer-typography.php:181
 msgid "Font size for Titles"
-msgstr ""
+msgstr "Tamaño de fuente para títulos"
 
 #: inc/customizer/customizer-typography.php:200
 msgid "Titles font weight"
-msgstr ""
+msgstr "Peso de la fuente de los títulos"
 
 #: inc/customizer/customizer-typography.php:218
 msgid "Titles font style"
-msgstr ""
+msgstr "Estilo de la fuente de los títulos"
 
 #: inc/customizer/customizer-typography.php:231
 msgid "Site Title and Description"
-msgstr ""
+msgstr "Título y descripción del sitio"
 
 #: inc/customizer/customizer-typography.php:233
 msgid "Set typography settings for header site title and description"
-msgstr ""
+msgstr "Establece ajuste de tipografía para titulo y descripción del sitio"
 
 #: inc/customizer/customizer-typography.php:247
 msgid "Typography Face for site title"
-msgstr ""
+msgstr "Fuente para el titulo del sitio"
 
 #: inc/customizer/customizer-typography.php:265
 msgid "Google font for site title"
-msgstr ""
+msgstr "Google Font para el titulo del sitio"
 
 #: inc/customizer/customizer-typography.php:284
 msgid "Font size site ttile"
-msgstr ""
+msgstr "Tamaño de la fuente del titulo del sitio"
 
 #: inc/customizer/customizer-typography.php:303
 msgid "Site title font weight"
-msgstr ""
+msgstr "Peso fuente titulo del sitio"
 
 #: inc/customizer/customizer-typography.php:321
 msgid "Typography Face for site description"
-msgstr ""
+msgstr "Fuente para la descripción del sitio"
 
 #: inc/customizer/customizer-typography.php:339
 msgid "Google font for site description"
-msgstr ""
+msgstr "Google Font para la descripción del sitio"
 
 #: inc/customizer/customizer-typography.php:356
 msgid "Font size site description"
-msgstr ""
+msgstr "Tamaño fuente para la descripción del sitio"
 
 #: inc/customizer/customizer-typography.php:375
 msgid "Site description font weight"
-msgstr ""
+msgstr "Peso fuente para la descripción del sitio"
 
 #: inc/customizer/customizer-typography.php:387
 msgid "Menu header"
-msgstr ""
+msgstr "Menú cabecera"
 
 #: inc/customizer/customizer-typography.php:389
 msgid "Set typography settings menu header"
-msgstr ""
+msgstr "Establece ajuste de tipografía para el menú de cabecera"
 
 #: inc/customizer/customizer-typography.php:403
 msgid "Typography Face for the menu header"
-msgstr ""
+msgstr "Fuente para el menú de cabecera"
 
 #: inc/customizer/customizer-typography.php:421
 msgid "Google font for menu header"
-msgstr ""
+msgstr "Google Font para el menú de cabecera"
 
 #: inc/customizer/customizer-typography.php:438
 msgid "Font size menu header texts"
-msgstr ""
+msgstr "Tamaño de fuente de l texto menú cabecera"
 
 #: inc/customizer/customizer-typography.php:457
 msgid "Menu header font weight"
-msgstr ""
+msgstr "Peso fuente menú cabecera"
 
 #: inc/customizer/customizer-typography.php:475
 msgid "Menu header font style"
-msgstr ""
+msgstr "Estilo de la fuente menú cabecera"
 
 #: inc/customizer/customizer-typography.php:489
 msgid "Texts"
-msgstr ""
+msgstr "Textos"
 
 #: inc/customizer/customizer-typography.php:491
 msgid "Set typography settings texts of posts and pages"
-msgstr ""
+msgstr "Establece ajuste de tipografía para entradas y paginas"
 
 #: inc/customizer/customizer-typography.php:504
 msgid "Typography Face for the texts"
-msgstr ""
+msgstr "Fuente para los textos"
 
 #: inc/customizer/customizer-typography.php:522
 msgid "Google font for Texts"
-msgstr ""
+msgstr "Google Font para los textos"
 
 #: inc/customizer/customizer-typography.php:540
 msgid "Font size for Texts"
-msgstr ""
+msgstr "Tamaño de fuente para los textos"
 
 #: inc/customizer/customizer-typography.php:559
 msgid "Texts font style"
-msgstr ""
+msgstr "Estilo de fuente para los textos"
 
 #: inc/customizer/customizer-typography.php:576
 msgid "Texts font weight"
-msgstr ""
+msgstr "Peso de la fuente en los textos"
 
 #: inc/customizer/customizer.php:46
 msgid "Set site title & Description text color"
-msgstr ""
+msgstr "Establce color texto para el titulo y descripción del sitio"
 
 #: inc/customizer/customizer.php:47
 msgid "Set site background color"
-msgstr ""
+msgstr "Color de fondo del sitio"
 
 #: inc/customizer/customizer.php:48
 msgid "Image file size 250px x 250px"
-msgstr ""
+msgstr "Tamaño de la image 250px x 250px"
 
 #: inc/customizer/customizer.php:58
 msgid "Show or hide title and description"
-msgstr ""
+msgstr "Mostrar u ocultar titulo y descripción"
 
 #: inc/hooks.php:160
 msgid ""
 "Want to know more about us?\n"
 "                "
-msgstr ""
+msgstr "¿Quieres saber más sobre nosotros/n"
 
 #: inc/hooks.php:163
 msgid ""
 "Contact us?\n"
 "                "
-msgstr ""
+msgstr "Contacto/n"
 
 #. translators: %s: post author.
 #: inc/template-tags.php:35
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "Por %s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:52
@@ -598,42 +605,42 @@ msgstr ""
 #: template-parts/content-page.php:37
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
+msgstr "Editar <span class=\"screen-reader-text\">%s</span>"
 
 #. translators: %s: Name of current post
 #: inc/template-tags.php:136
 msgid "Read More"
-msgstr ""
+msgstr "Leer Mas"
 
 #: index.php:46
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: index.php:47
 msgid "Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: index.php:48
 msgid "Page"
-msgstr ""
+msgstr "Pagina"
 
 #. translators: %s: search query.
 #: search.php:21
 #, php-format
 msgid "Results for: %s"
-msgstr ""
+msgstr "Resultados para: %s"
 
 #: single.php:21
 msgid "<i class=\"fas fa-long-arrow-alt-left\"></i> Previous Entry"
-msgstr ""
+msgstr "<i class=\"fas fa-long-arrow-alt-left\"></i> Entrada anterior"
 
 #: single.php:22
 msgid "Next Entry <i class=\"fas fa-long-arrow-alt-right\"></i>"
-msgstr ""
+msgstr "Entrada Siguiente<i class=\"fas fa-long-arrow-alt-right\"></i>"
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
-msgstr ""
+msgstr "No se encontro"
 
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:25
@@ -641,28 +648,34 @@ msgstr ""
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Preparado para publicar tu primera entrada? <a href=\"%1$s\">Empieza aquí</"
+"a>."
 
 #: template-parts/content-none.php:38
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Lo sentimos, pero nada coincide con sus términos de búsqueda. Por favor, "
+"inténtelo de nuevo con algunas palabras clave diferentes."
 
 #: template-parts/content-none.php:44
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Parece que no podemos encontrar lo que estás buscando. Quizás la búsqueda "
+"puede ayudar."
 
 #: template-parts/content-page-front.php:23 template-parts/content-page.php:24
 #: template-parts/content.php:60
 msgid "Pages:"
-msgstr ""
+msgstr "Páginas:"
 
 #: template-parts/content.php:47
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
+msgstr "Continua leyendo<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #. Theme Name of the plugin/theme
 msgid "solido"
@@ -674,6 +687,9 @@ msgid ""
 "business blog with initial page where to establish services, equipment and "
 "contact."
 msgstr ""
+"Solido es un tema de fácil e intuitiva personalización, enfocado para blog "
+"personal o de negocios con página inicial donde establecer servicios, "
+"equipos y contacto."
 
 #. Author of the plugin/theme
 msgid "JR simarro"

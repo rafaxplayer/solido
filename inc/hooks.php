@@ -97,7 +97,7 @@ if(!function_exists('solido_front_page_panels')){
                             
                         </div>
                         <div class="service-content">
-                            <?php solido_excerpt(20); ?>
+                            <?php solido_get_excerpt(20); ?>
                         </div>
                     </div>
                     <?php
