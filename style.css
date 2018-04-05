@@ -8,7 +8,7 @@ Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: solido
-Tags: custom-background, custom-logo, custom-header,custom-colors, custom-menu, footer-widgets, featured-images, threaded-comments, theme-options, full-width-template, right-sidebar, left-sidebar,grid-layout, translation-ready
+Tags: custom-background, custom-logo, custom-header, custom-colors, custom-menu, footer-widgets, featured-images, threaded-comments, theme-options, full-width-template, right-sidebar, left-sidebar,grid-layout, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -475,8 +475,7 @@ a:active {
 
 .main-navigation a {
     display: block;
-    padding: 12.8px;
-    padding: .8rem;
+    padding: 1.2rem;
     text-decoration: none;
     text-transform: uppercase;
     color: #fff
@@ -1025,7 +1024,7 @@ a:active {
 .post,
 .page,
 #secondary .widget,
-.post-date {
+.post .post-date {
     -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
     box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
     background-color: white;
@@ -1068,7 +1067,7 @@ a:active {
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    z-index: 999999;
+    z-index: 9999;
 }
 
 .post .post-date a {

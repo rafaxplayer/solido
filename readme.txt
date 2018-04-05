@@ -1,7 +1,7 @@
 === solido ===
 
 Contributors: automattic
-Tags: custom-background, custom-logo, custom-header,custom-colors, custom-menu, footer-widgets, featured-images, threaded-comments, theme-options, full-width-template, right-sidebar, left-sidebar,grid-layout, translation-ready
+Tags: custom-background, custom-logo, custom-header,custom-colors, custom-menu, footer-widgets, featured-images, threaded-comments, theme-options, full-width-template, right-sidebar, left-sidebar, grid-layout, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.8
