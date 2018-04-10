@@ -46,7 +46,7 @@
         ),
     ));
 
-    // position menu header
+    // slider
 	$wp_customize->add_setting( 'solido_options[show-slider]' , array(
 		'default' => $defaults['show-slider'],
 		'sanitize_callback' => 'solido_sanitize_checkbox',
@@ -78,6 +78,40 @@
             2 => esc_html__('List format', 'solido')
         ),
         'priority'   => 103,
+    ));
+
+    // show related post view
+	$wp_customize->add_setting( 'solido_show_related_posts' , array(
+		'default' => $defaults['show-related_posts'],
+		'sanitize_callback' => 'solido_sanitize_checkbox',
+    ));
+    
+    $wp_customize->add_control( 'solido_show_related_posts_control', array(
+		'label'      => esc_html__( 'Show related posts', 'solido' ),
+		'section'    => 'solido_layouts_section',
+        'settings'   => 'solido_show_related_posts',
+        'description'=> esc_html__('Show related post on single posts','solido'),
+        'type' => 'checkbox',
+        'priority' => 104,
+    ));
+
+    // taxonomy for related posts
+	$wp_customize->add_setting( 'solido_taxonomy_related_posts' , array(
+		'default' => $defaults['solido_taxonomy_related_posts'],
+		'sanitize_callback' => 'solido_text_sanitization',
+	)); 
+	
+	$wp_customize->add_control( 'solido_taxonomy_related_posts_control', array(
+		'label'      => esc_html__( 'Set terms for display related posts (Tags or Categories)', 'solido' ),
+		'section'    => 'solido_layouts_section',
+		'settings'   => 'solido_taxonomy_related_posts',
+        'type' => 'select',
+        'priority' => 105,
+        'choices' => array( 
+            'category' => esc_html__( 'Categories', 'solido' ), 
+            'post_tag' => esc_html__( 'Tags', 'solido' ),
+            
+        ),
     ));
     
     

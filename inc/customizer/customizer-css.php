@@ -126,13 +126,13 @@ if(!function_exists('solido_custom_colors_fonts')){
             .widget a{color:#282828}
             .main-navigation ul a{color:". solido_get_theme_mod('colors','header-menu-text-color').";font-family:".$font_face['menu_header'].";font-style:". solido_get_theme_mod('typography','menu_header_fontstyle') .";font-weight:". solido_get_theme_mod('typography','menu_header_fontweight').";font-size:". solido_get_theme_mod('typography','menu_header_fontsize').";}
             .main-navigation ul a:hover{color:". solido_get_theme_mod('colors','header-menu-text-hover-color').";}
-            @media screen and (min-width:37.5em){
-                .main-navigation>div>ul{background-color:transparent;}
-                .main-navigation .current-menu-item a{color:". solido_get_theme_mod('colors','header-menu-active-color').";}
-                .main-navigation ul ul,
-                .main-navigation>div>ul>li:hover{background-color:". solido_get_theme_mod('colors','header-menu-item-hover-color').";}
-                .main-navigation ul ul li:hover{background-color:". solido_darken_color(solido_get_theme_mod('colors','header-menu-item-hover-color')).";}
-            }
+           
+            .main-navigation>div>ul{background-color:transparent;}
+            .main-navigation .current-menu-item a{color:". solido_get_theme_mod('colors','header-menu-active-color').";}
+            .main-navigation ul ul,
+            .main-navigation>div>ul>li:hover{background-color:". solido_get_theme_mod('colors','header-menu-item-hover-color').";}
+            .main-navigation ul ul li:hover{background-color:". solido_darken_color(solido_get_theme_mod('colors','header-menu-item-hover-color')).";}
+            
             .button-up,.menu-toggle{background-color:". $primary_color .";}
             .button-up:hover{background-color:".solido_darken_color($primary_color).";}
             .comment-form .submit{border: 3px solid ". $primary_color .";color:". $primary_color .";}
@@ -140,8 +140,9 @@ if(!function_exists('solido_custom_colors_fonts')){
             .footer-widgets .widget,.footer-widgets .widget a,.footer-widgets .widget h2{color:". solido_get_theme_mod('colors','footer-widgets-text-color').";}
             .site-footer{background-color:". solido_get_theme_mod('colors','footer-background-color').";}
             .site-info{color:". solido_get_theme_mod('colors','footer-text-color').";}
-            #solido-team{background-color:".solido_get_theme_mod('colors','panel-team-background-color')."}
-            #solido-team h2{color:".solido_get_theme_mod('colors','panel-team-text-color')."}";
+            .solido-front-page #solido-team{background-color:".solido_get_theme_mod('colors','panel-team-background-color')."}
+            .solido-front-page #solido-team h2{color:".solido_get_theme_mod('colors','panel-team-text-color').";font-family:".$font_face['titles'].";font-style:". solido_get_theme_mod('typography','titles_fontstyle') .";font-weight:". solido_get_theme_mod('typography','titles_fontweight').";}
+            .solido-front-page .contact-wrap .info h3,.slider-item h2{font-family:".$font_face['titles'].";font-style:". solido_get_theme_mod('typography','titles_fontstyle') .";font-weight:". solido_get_theme_mod('typography','titles_fontweight').";}";
         
         return $outputh_css;
     }
@@ -399,14 +400,46 @@ function solido_get_font_face(){
     if(!isset($solido_options['typography'])){
         return;
     }
+    $defaults = defaults_customizer();
     $solido_typography = $solido_options['typography'];
 
     $font_face = array();
-    $font_face['titles'] = isset($solido_typography['titles_face']) && $solido_typography['titles_face'] == 'Google Fonts' ? $solido_typography['titles_googlefont'] : $solido_typography['titles_face'];
-    $font_face['texts'] = isset($solido_typography['texts_face']) && $solido_typography['texts_face'] == 'Google Fonts' ? $solido_typography['texts_googlefont'] : $solido_typography['texts_face'];
+
+    if(isset($solido_typography['titles_face'])): 
+        $font_face['titles'] = $solido_typography['titles_face'] == 'Google Fonts' ? $solido_typography['titles_googlefont'] : $solido_typography['titles_face'];
+    else: 
+        $font_face['titles'] = $defaults['typography']['titles_face']; 
+    endif;
+
+    if(isset($solido_typography['texts_face'])): 
+        $font_face['texts'] = $solido_typography['texts_face'] == 'Google Fonts' ? $solido_typography['texts_googlefont'] : $solido_typography['texts_face'];
+    else: 
+        $font_face['texts'] = $defaults['typography']['texts_face']; 
+    endif;
+
+    if(isset($solido_typography['menu_header_face'])): 
+        $font_face['menu_header'] = $solido_typography['menu_header_face'] == 'Google Fonts' ? $solido_typography['menu_header_googlefont'] : $solido_typography['menu_header_face'];
+    else: 
+        $font_face['menu_header'] = $defaults['typography']['menu_header_face']; 
+    endif;
+
+    if(isset($solido_typography['site_title_face'])): 
+        $font_face['site_title'] = $solido_typography['site_title_face'] == 'Google Fonts' ? $solido_typography['site_title_googlefont'] : $solido_typography['site_title_face'];
+    else: 
+        $font_face['site_title'] = $defaults['typography']['site_title_face']; 
+    endif;
+
+    if(isset($solido_typography['site_description_face'])): 
+        $font_face['site_description'] = $solido_typography['site_description_face'] == 'Google Fonts' ? $solido_typography['site_description_googlefont'] : $solido_typography['site_description_face'];
+    else: 
+        $font_face['site_description'] = $defaults['typography']['site_description_face']; 
+    endif;
+
+     /*$font_face['titles'] = isset($solido_typography['titles_face']) && $solido_typography['titles_face'] == 'Google Fonts' ? $solido_typography['titles_googlefont'] : $solido_typography['titles_face'];
+    $font_face['texts'] = isset($solido_typography['texts_face']) && $solido_typography['texts_face'] == 'Google Fonts' ? $solido_typography['texts_googlefont'] : $solido_typography['texts_face']; 
     $font_face['menu_header'] = isset($solido_typography['menu_header_face']) && $solido_typography['menu_header_face'] == 'Google Fonts' ? $solido_typography['menu_header_googlefont'] : $solido_typography['menu_header_face'];
     $font_face['site_title'] = isset($solido_typography['site_title_face']) && $solido_typography['site_title_face'] == 'Google Fonts' ? $solido_typography['site_title_googlefont'] : $solido_typography['site_title_face'];
-    $font_face['site_description'] = isset($solido_typography['site_description_face']) && $solido_typography['site_description_face'] == 'Google Fonts' ? $solido_typography['site_description_googlefont'] : $solido_typography['site_description_face'];
+    $font_face['site_description'] = isset($solido_typography['site_description_face']) && $solido_typography['site_description_face'] == 'Google Fonts' ? $solido_typography['site_description_googlefont'] : $solido_typography['site_description_face'];*/
     
     return $font_face;
 }

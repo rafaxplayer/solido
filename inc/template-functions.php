@@ -34,6 +34,9 @@ function solido_pingback_header() {
 }
 add_action( 'wp_head', 'solido_pingback_header' );
 
+/**
+ * Custom excerpt for index.php
+ */
 if ( ! function_exists( 'solido_excerpt' ) ) :
 
 	function solido_excerpt($num){
@@ -55,14 +58,69 @@ if ( ! function_exists( 'solido_excerpt' ) ) :
 	}
 endif;
 
-function solido_get_excerpt($num){
-	$read_more = sprintf('<div class="more"><a href="%1$s">%2$s</a></div>',
-			esc_url( get_permalink( get_the_ID() ) ),
-        	/* translators: %s: Name of current post */
-			__( 'Read More', 'solido' ));
+/**
+ * Custom excerpt for front page
+ */
+if ( ! function_exists( 'solido_get_excerpt' ) ) :
 
-	echo wp_trim_words( get_the_excerpt(), $num, $read_more);
-}
+	function solido_get_excerpt($num){
+		$read_more = sprintf('<div class="more"><a href="%1$s">%2$s</a></div>',
+				esc_url( get_permalink( get_the_ID() ) ),
+				/* translators: %s: Name of current post */
+				__( 'Read More', 'solido' ));
+		echo wp_trim_words( get_the_excerpt(), $num, $read_more);
+	}
 
+endif;
+/**
+ * Add related post to single post
+ */
+if( ! function_exists( 'solido_related_posts' ) ) :
 
+	function solido_related_posts(){
+
+		if(!is_singular() || !get_theme_mod('solido_show_related_posts',true)){ return; }
+		
+		// get the user taxonomy select
+		$taxonomy = get_theme_mod('solido_taxonomy_related_posts','category');
+		
+		$terms = get_the_terms( get_the_ID(), $taxonomy);
+		$terms_ids = array();
+		
+		if( $terms ):
+			foreach ($terms as $term): 
+				$terms_ids[] = $term->term_id;
+			endforeach;
+		else:
+			return;
+		endif;
+
+		// set query 
+		$taxonomyQuery = $taxonomy =='category' ? array('category__in'=> $terms_ids) : array('tag__in'=> $terms_ids);
+		
+		$args = array(
+			'posts_per_page'	=> 3,
+			'post__not_in'		=>array(get_the_ID()),
+			'orderby'			=>'rand'
+		);
+		array_unshift($args,$taxonomyQuery);
+				
+		$loop	= new WP_QUERY($args);
+
+		if ( $loop->have_posts() ): ?>
+			<h2 class="entry-title"><?php _e('Related Posts','solido');?></h2>
+			<div class="related-posts">
+				
+				<?php while ( $loop->have_posts() ):
+					$loop->the_post();
+					get_template_part( '/template-parts/content', 'relatedposts'); 
+									
+				endwhile;?>
+			</div>
+
+    	<?php endif;
+   		wp_reset_query();
+
+	}
+endif;
 

@@ -4,7 +4,7 @@ Theme URI:
 Author: JR simarro
 Author URI: http://juanrafaelsimarro.com/
 Description: Solid theme with easy and intuitive dexterity, focused for personal or business blog with initial page where to establish services, equipment and contact.
-Version: 1.3.0
+Version: 1.3.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: solido
@@ -828,8 +828,9 @@ a:active {
 .search-form>div:before {
     font-family: 'Font Awesome 5 Free';
     content: "\f002";
-    color: #282828;
-    font-size: 14px;
+    color: #a7a0a0;
+    ;
+    font-size: 20px;
     position: absolute;
     display: inline-block;
     font-weight: 900;
@@ -942,31 +943,6 @@ a:active {
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0;
-    -webkit-transition: opacity .4s;
-    transition: opacity .4s;
-}
-
-.blog .post-thumbnail:after {
-    content: '\f06e';
-    font-family: 'Font Awesome 5 Free';
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    color: var(--links-color);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-weight: 900;
-    font-size: 2rem;
     opacity: 0;
     -webkit-transition: opacity .4s;
     transition: opacity .4s;
@@ -1113,16 +1089,19 @@ article.page .entry-header h1,
 .solido-front-page .page {
     -webkit-box-shadow: none;
     box-shadow: none;
-    max-width: 70rem;
-    margin: 0 auto 2rem;
     background-color: transparent;
 }
 
-@media screen and (min-width:59.75rem) {
-    .solido-front-page .page {
-        padding-left: 7rem;
-        padding-right: 7rem
-    }
+.solido-front-page .content-wrp {
+    background-color: white;
+    position: relative;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solido-front-page .content-wrp.has_image {
+    margin-top: -4rem;
 }
 
 .solido-front-page .entry-title:after,
@@ -1148,6 +1127,9 @@ article.page .entry-header h1,
 .single .entry-title {
     font-size: 2.5em;
 }
+
+
+/* Serice panel*/
 
 .solido-front-page .service-wrap {
     display: -ms-grid;
@@ -1281,6 +1263,9 @@ article.page .entry-header h1,
     color: #9da8b3;
 }
 
+
+/* Team panel*/
+
 .solido-front-page #solido-team {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1334,6 +1319,9 @@ article.page .entry-header h1,
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+
+
+/* Contact panel*/
 
 .solido-front-page .contact-wrap {
     background-image: url(assets/images/contact.jpg);
@@ -1899,10 +1887,17 @@ object {
     padding: 1rem;
 }
 
+.slider-item h2,
+.slider-item p {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
 .slider-item h2 {
+    text-align: center;
     font-size: 4em;
     font-weight: 100;
-    margin-bottom: -8px;
+    margin-bottom: .5rem;
 }
 
 .slider-item .more {
@@ -1931,24 +1926,97 @@ object {
 }
 
 
-/* template projects */
+/*Related Posts*/
 
-.projects-header {
-    position: relative;
-}
-
-.projects-header h1 {
-    position: absolute;
-}
-
-.projects-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
-    grid-gap: 10px;
-}
-
-.projects-content article {
+.related-posts {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.related-posts article {
+    flex: 1 0 33%;
+    position: relative;
+    min-width: 200px;
+    min-height: 200px;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.related-posts article .info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
+    transition: opacity .4s;
+}
+
+.related-posts article .info h2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 1.1rem;
+    font-weight: 100;
+    text-align: center;
+    opacity: 0;
+}
+
+.related-posts article .info h2 a {
+    color: white;
+}
+
+.related-posts article .info span {
+    color: #c7c1c1;
+    font-family: serif;
+    font-size: 1.2rem;
+    vertical-align: baseline;
+    opacity: 0;
+}
+
+.related-posts article .info span:before {
+    content: '\f073';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 4px;
+    font-size: .8rem;
+}
+
+.related-posts article:hover .info {
+    opacity: 1;
+}
+
+.related-posts article:hover .info h2,
+.related-posts article:hover .info span {
+    animation-name: toup;
+    animation-duration: .6s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+}
+
+.related-posts article:hover .info h2:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 4rem;
+    height: 1px;
+    background-color: #8c8686;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1rem;
+}
+
+@keyframes toup {
+    from {
+        opacity: 0;
+        padding-top: 2rem;
+    }
+    to {
+        opacity: 1;
+        padding-top: 0;
+    }
 }

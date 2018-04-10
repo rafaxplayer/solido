@@ -214,5 +214,30 @@ jQuery(function($) {
     });
     //end panel team
 
+    // Script to hide show the select of taxonomy with related posts layout
+    var $related_checkbox = $('#customize-control-solido_show_related_posts_control input:checkbox'),
+        $related_is_checked = $related_checkbox.is(':checked'),
+        $related_select_control = $('#customize-control-solido_taxonomy_related_posts_control');
 
+    if ($related_is_checked) {
+        $related_select_control.fadeIn();
+
+    } else {
+        $related_select_control.fadeOut();
+
+    }
+
+    $related_checkbox.change(function() {
+
+        var check_change = this.checked;
+
+        if (check_change) {
+            $related_select_control.fadeIn();
+
+        } else {
+            $related_select_control.fadeOut();
+
+        }
+    });
+    // end related posts
 });

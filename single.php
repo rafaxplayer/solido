@@ -17,6 +17,8 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content');
 
+			solido_related_posts();
+
 			the_post_navigation(array(
 				'prev_text'  => __( '<i class="fas fa-long-arrow-alt-left"></i> Previous Entry' ,'solido'),
 				'next_text'  => __( 'Next Entry <i class="fas fa-long-arrow-alt-right"></i>','solido' ),

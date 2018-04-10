@@ -25,7 +25,9 @@ Solid theme with easy and intuitive dexterity, focused for personal or business 
 
 = Does this theme support any plugins? =
 
-solido includes support for Infinite Scroll in Jetpack.
+Solido includes support for Infinite Scroll in Jetpack.
+
+The galleries use lightbox technology for their correct operation when creating them, you must establish "link to" as the media file.
 
 == Changelog ==
 

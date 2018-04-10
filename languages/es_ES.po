@@ -1,13 +1,15 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: solido\n"
-"POT-Creation-Date: 2018-03-16 15:25+0100\n"
-"PO-Revision-Date: 2018-03-19 10:40+0100\n"
+"POT-Creation-Date: 2018-04-09 10:45+0200\n"
+"PO-Revision-Date: 2018-04-09 10:49+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -16,8 +18,6 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: es_ES\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -63,12 +63,12 @@ msgstr "Los comentarios están cerrados."
 #: footer.php:29
 #, php-format
 msgid "&copy;%1$s %2$s | "
-msgstr ""
+msgstr "&copy;%1$s %2$s | "
 
 #: footer.php:38
 #, php-format
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "Tema: %1$s por %2$s."
 
 #: functions.php:51
 msgid "Header menu"
@@ -84,15 +84,15 @@ msgstr "Añade widgets aquí."
 
 #: functions.php:122
 msgid "Footer widgets 1"
-msgstr ""
+msgstr "Pie de pagina widgets 1"
 
 #: functions.php:132
 msgid "Footer widgets 2"
-msgstr ""
+msgstr "Pie de pagina widgets 2"
 
 #: functions.php:142
 msgid "Footer widgets 3"
-msgstr ""
+msgstr "Pie de pagina widgets 3"
 
 #: header.php:25
 msgid "Skip to content"
@@ -240,11 +240,13 @@ msgid ""
 "To establish adjustments for the static page template of the tem, it is "
 "necessary to have in the section homepage settins marked \"a static page\" "
 "and choose a page."
-msgstr "Establece ajustes para la pagina frontal del tema."
+msgstr ""
+"Establece ajustes para la pagina frontal del tema, es necesario que en "
+"ajuste>lectura tengas una pagina de portada."
 
 #: inc/customizer/customizer-front-page.php:17
 msgid "Panel Services Settings"
-msgstr "Ajustes del panel servicios"
+msgstr "Ajustes Panel servicios"
 
 #: inc/customizer/customizer-front-page.php:29
 msgid "Show panel services"
@@ -256,7 +258,7 @@ msgstr "Mostrar u ocultar panel servicios en la pagina frontal"
 
 #: inc/customizer/customizer-front-page.php:44
 msgid "Category for display services "
-msgstr "Categoría para los servicios"
+msgstr "Categoría para los servicios "
 
 #: inc/customizer/customizer-front-page.php:47
 msgid "Enter category name for display services items (default \"service\")"
@@ -264,7 +266,7 @@ msgstr "Introduce la categoría que usaras para mostrar los servicios."
 
 #: inc/customizer/customizer-front-page.php:57
 msgid "Color for panel services "
-msgstr "Color del panel servicios"
+msgstr "Color del panel servicios "
 
 #: inc/customizer/customizer-front-page.php:60
 msgid "Set color for panel service"
@@ -272,7 +274,7 @@ msgstr "Establece color para el panel servicios"
 
 #: inc/customizer/customizer-front-page.php:69
 msgid "Panel Team Settings"
-msgstr "Ajustes del panel de servicios"
+msgstr "Ajustes  Panel de Equipo"
 
 #: inc/customizer/customizer-front-page.php:80
 msgid "Show panel team"
@@ -292,7 +294,7 @@ msgstr "Establece texto para el panel equipo"
 
 #: inc/customizer/customizer-front-page.php:109
 msgid "Category for display team items "
-msgstr "Categoría para las entradas del equipo"
+msgstr "Categoría para las entradas del equipo "
 
 #: inc/customizer/customizer-front-page.php:112
 msgid "Enter category name for display team items (default \"team\")"
@@ -304,7 +306,7 @@ msgstr "Color del texto para el panel equipo"
 
 #: inc/customizer/customizer-front-page.php:126
 msgid "Set panel team text color"
-msgstr ""
+msgstr "Establece color para el texto del panel de equipo"
 
 #: inc/customizer/customizer-front-page.php:136
 msgid "Panel team background color"
@@ -316,7 +318,7 @@ msgstr "Establece color de fondo para el panel equipo"
 
 #: inc/customizer/customizer-front-page.php:150
 msgid "Panel Contact Settings"
-msgstr "Panel contacto ajustes"
+msgstr "Ajustes Panel Contacto"
 
 #: inc/customizer/customizer-front-page.php:161
 msgid "Show panel contact"
@@ -424,9 +426,29 @@ msgstr "Formato grilla (Por defecto)"
 msgid "List format"
 msgstr "Formato lista"
 
+#: inc/customizer/customizer-layouts.php:90
+msgid "Show related posts"
+msgstr "Mostrar entradas relacionadas"
+
+#: inc/customizer/customizer-layouts.php:93
+msgid "Show related post on single posts"
+msgstr "Mostrar entradas relacionadas en el articulo de detalle"
+
+#: inc/customizer/customizer-layouts.php:105
+msgid "Set terms for display related posts (Tags or Categories)"
+msgstr "Establece termino para las entradas relacionadas (Tags o Categorias)"
+
+#: inc/customizer/customizer-layouts.php:111
+msgid "Categories"
+msgstr "Categorias"
+
+#: inc/customizer/customizer-layouts.php:112
+msgid "Tags"
+msgstr "Etiquetas"
+
 #: inc/customizer/customizer-typography.php:122
 msgid "Typography settings"
-msgstr "Ajustes de tipografia"
+msgstr "Ajustes de tipografía"
 
 #: inc/customizer/customizer-typography.php:131
 msgid "Titles"
@@ -574,20 +596,29 @@ msgstr "Mostrar u ocultar titulo y descripción"
 msgid ""
 "Want to know more about us?\n"
 "                "
-msgstr "¿Quieres saber más sobre nosotros/n"
+msgstr "¿Quieres saber más sobre nosotros/n "
 
 #: inc/hooks.php:163
 msgid ""
 "Contact us?\n"
 "                "
-msgstr "Contacto/n"
+msgstr "Contacto/n "
+
+#. translators: %s: Name of current post
+#: inc/template-functions.php:49
+msgid "Read More"
+msgstr "Leer Mas"
+
+#: inc/template-functions.php:97
+msgid "Related Posts"
+msgstr "Entradas Relacionadas"
 
 #. translators: %s: post author.
 #: inc/template-tags.php:35
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr "Por %s"
+msgstr "por %s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:52
@@ -607,11 +638,6 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "Editar <span class=\"screen-reader-text\">%s</span>"
 
-#. translators: %s: Name of current post
-#: inc/template-tags.php:136
-msgid "Read More"
-msgstr "Leer Mas"
-
 #: index.php:46
 msgid "Previous"
 msgstr "Anterior"
@@ -630,11 +656,11 @@ msgstr "Pagina"
 msgid "Results for: %s"
 msgstr "Resultados para: %s"
 
-#: single.php:21
+#: single.php:23
 msgid "<i class=\"fas fa-long-arrow-alt-left\"></i> Previous Entry"
 msgstr "<i class=\"fas fa-long-arrow-alt-left\"></i> Entrada anterior"
 
-#: single.php:22
+#: single.php:24
 msgid "Next Entry <i class=\"fas fa-long-arrow-alt-right\"></i>"
 msgstr "Entrada Siguiente<i class=\"fas fa-long-arrow-alt-right\"></i>"
 
@@ -679,7 +705,7 @@ msgstr "Continua leyendo<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #. Theme Name of the plugin/theme
 msgid "solido"
-msgstr ""
+msgstr "solido"
 
 #. Description of the plugin/theme
 msgid ""
@@ -693,8 +719,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "JR simarro"
-msgstr ""
+msgstr "JR simarro"
 
 #. Author URI of the plugin/theme
 msgid "http://juanrafaelsimarro.com/"
-msgstr ""
+msgstr "http://juanrafaelsimarro.com/"

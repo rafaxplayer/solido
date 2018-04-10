@@ -60,6 +60,8 @@ function defaults_customizer(){
     $defaults['panel-text-team']= esc_html__('Team Us','solido');
     $defaults['panel-text-contact']= esc_html__('Want to know more about us?','solido');
     $defaults['panel-button-contact']= esc_html__('Contact us?','solido');
+    $defaults['show-related_posts']=true;
+    $defaults['solido_taxonomy_related_posts']='category';
 
     return $defaults;
 }
