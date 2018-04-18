@@ -1,6 +1,6 @@
 /*!
 Theme Name: solido
-Theme URI: 
+Theme URI: http://juanrafaelsimarro.com/
 Author: JR simarro
 Author URI: http://juanrafaelsimarro.com/
 Description: Solid theme with easy and intuitive dexterity, focused for personal or business blog with initial page where to establish services, equipment and contact.
@@ -1362,9 +1362,9 @@ article.page .entry-header h1,
 
 .solido-front-page .contact-wrap .info a {
     font-weight: 100;
-    padding: 16px;
-    padding: 1rem;
-    border: 2px solid rgb(206, 201, 201);
+    padding: 12px 40px;
+    padding: .8rem 2.5rem;
+    border: 1px dotted rgb(206, 201, 201);
     color: rgb(206, 201, 201);
     display: inline-block;
 }
@@ -1687,7 +1687,6 @@ object {
 .site-titles {
     padding: 48px 24px;
     padding: 3rem 1.5rem;
-    text-align: center;
 }
 
 .site-title {
@@ -1703,6 +1702,7 @@ object {
 .site-branding .site-title,
 .site-branding .site-description {
     margin: 0;
+    text-align: left;
 }
 
 .site-branding .site-description {
@@ -2008,6 +2008,28 @@ object {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 1rem;
+}
+
+@keyframes toup {
+    from {
+        opacity: 0;
+        padding-top: 2rem;
+    }
+    to {
+        opacity: 1;
+        padding-top: 0;
+    }
+}
+
+@-webkit-keyframes toup {
+    from {
+        opacity: 0;
+        padding-top: 2rem;
+    }
+    to {
+        opacity: 1;
+        padding-top: 0;
+    }
 }
 
 @keyframes toup {

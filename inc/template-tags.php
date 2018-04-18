@@ -129,3 +129,5 @@ function solido_post_thumbnail() {
 endif;
 
 
+
+
