@@ -2020,25 +2020,3 @@ object {
         padding-top: 0;
     }
 }
-
-@-webkit-keyframes toup {
-    from {
-        opacity: 0;
-        padding-top: 2rem;
-    }
-    to {
-        opacity: 1;
-        padding-top: 0;
-    }
-}
-
-@keyframes toup {
-    from {
-        opacity: 0;
-        padding-top: 2rem;
-    }
-    to {
-        opacity: 1;
-        padding-top: 0;
-    }
-}
