@@ -16,6 +16,8 @@
  *
  * @uses solido_header_style()
  */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 function solido_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'solido_custom_header_args', array(
 		'default-image'          => '',

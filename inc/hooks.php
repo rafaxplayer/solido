@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 if(!function_exists('footer_widgets')){
 
     function footer_widgets(){

@@ -8,7 +8,7 @@
  *
  * @package solido
  */
-
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 
 	</div><!-- #content -->

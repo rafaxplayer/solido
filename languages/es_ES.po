@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: solido\n"
-"POT-Creation-Date: 2018-04-09 10:45+0200\n"
-"PO-Revision-Date: 2018-04-09 10:49+0200\n"
+"POT-Creation-Date: 2018-05-06 13:40+0200\n"
+"PO-Revision-Date: 2018-05-06 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -98,7 +98,7 @@ msgstr "Pie de pagina widgets 3"
 msgid "Skip to content"
 msgstr "Saltar al contenido"
 
-#: header.php:48
+#: header.php:49
 msgid "Primary Menu"
 msgstr "Navegación Principal"
 
@@ -393,6 +393,7 @@ msgid "Right (default)"
 msgstr "Derecha ( Por defecto)"
 
 #: inc/customizer/customizer-layouts.php:43
+#: inc/customizer/customizer-login.php:34
 msgid "Left"
 msgstr "Inquierda"
 
@@ -445,6 +446,32 @@ msgstr "Categorias"
 #: inc/customizer/customizer-layouts.php:112
 msgid "Tags"
 msgstr "Etiquetas"
+
+#: inc/customizer/customizer-login.php:4
+msgid "Login Form settings"
+msgstr "Ajustes Formulario de acceso"
+
+#: inc/customizer/customizer-login.php:15
+msgid "Logo for login form"
+msgstr "Logo para el formulario de acceso"
+
+#: inc/customizer/customizer-login.php:18
+msgid "Set Image for login logo form (max sizes recomended 250px x 84px)"
+msgstr ""
+"Establece la imagen para el logo del formulario de acceso( max tamaños "
+"recomendados 250px x 84px)"
+
+#: inc/customizer/customizer-login.php:28
+msgid "Set the position where the log will be displayed"
+msgstr "Establece la posición en la que se mostrara el logo"
+
+#: inc/customizer/customizer-login.php:35
+msgid "Center ( Default )"
+msgstr "Centrado ( Por defecto)"
+
+#: inc/customizer/customizer-login.php:36
+msgid "Right"
+msgstr "Derecha"
 
 #: inc/customizer/customizer-typography.php:122
 msgid "Typography settings"
@@ -576,19 +603,19 @@ msgstr "Estilo de fuente para los textos"
 msgid "Texts font weight"
 msgstr "Peso de la fuente en los textos"
 
-#: inc/customizer/customizer.php:46
+#: inc/customizer/customizer.php:52
 msgid "Set site title & Description text color"
 msgstr "Establce color texto para el titulo y descripción del sitio"
 
-#: inc/customizer/customizer.php:47
+#: inc/customizer/customizer.php:53
 msgid "Set site background color"
 msgstr "Color de fondo del sitio"
 
-#: inc/customizer/customizer.php:48
+#: inc/customizer/customizer.php:54
 msgid "Image file size 250px x 250px"
 msgstr "Tamaño de la image 250px x 250px"
 
-#: inc/customizer/customizer.php:58
+#: inc/customizer/customizer.php:64
 msgid "Show or hide title and description"
 msgstr "Mostrar u ocultar titulo y descripción"
 
@@ -605,35 +632,35 @@ msgid ""
 msgstr "Contacto/n "
 
 #. translators: %s: Name of current post
-#: inc/template-functions.php:49
+#: inc/template-functions.php:49 inc/template-functions.php:70
 msgid "Read More"
 msgstr "Leer Mas"
 
-#: inc/template-functions.php:97
+#: inc/template-functions.php:111
 msgid "Related Posts"
 msgstr "Entradas Relacionadas"
 
 #. translators: %s: post author.
-#: inc/template-tags.php:35
+#: inc/template-tags.php:39
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr "por %s"
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:52
+#: inc/template-tags.php:56
 msgid ", "
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:59
+#: inc/template-tags.php:63
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:77 template-parts/content-page-front.php:36
-#: template-parts/content-page.php:37
+#: inc/template-tags.php:81 template-parts/content-page-front.php:37
+#: template-parts/content-page.php:39
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "Editar <span class=\"screen-reader-text\">%s</span>"
@@ -693,7 +720,7 @@ msgstr ""
 "Parece que no podemos encontrar lo que estás buscando. Quizás la búsqueda "
 "puede ayudar."
 
-#: template-parts/content-page-front.php:23 template-parts/content-page.php:24
+#: template-parts/content-page-front.php:24 template-parts/content-page.php:25
 #: template-parts/content.php:60
 msgid "Pages:"
 msgstr "Páginas:"
@@ -706,6 +733,11 @@ msgstr "Continua leyendo<span class=\"screen-reader-text\"> \"%s\"</span>"
 #. Theme Name of the plugin/theme
 msgid "solido"
 msgstr "solido"
+
+#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://juanrafaelsimarro.com/"
+msgstr "http://juanrafaelsimarro.com/"
 
 #. Description of the plugin/theme
 msgid ""
@@ -720,7 +752,3 @@ msgstr ""
 #. Author of the plugin/theme
 msgid "JR simarro"
 msgstr "JR simarro"
-
-#. Author URI of the plugin/theme
-msgid "http://juanrafaelsimarro.com/"
-msgstr "http://juanrafaelsimarro.com/"

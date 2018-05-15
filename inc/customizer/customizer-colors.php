@@ -1,4 +1,5 @@
 <?php
+    if ( ! defined( 'ABSPATH' ) ) { exit; }
     // ******** Customize colors ************//
 
     // header background color

@@ -6,6 +6,7 @@
  *
  * @package solido
  */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! function_exists( 'solido_setup' ) ) :
 	/**
@@ -42,7 +43,7 @@ if ( ! function_exists( 'solido_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size('solido-slider', 1850, 700, true);
+		/*add_image_size('solido-slider', 1850, 700, true);*/
 		add_image_size( 'solido-services', 1000, 1000, true );
 		add_image_size( 'solido-team', 200, 200, true );
 

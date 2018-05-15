@@ -1,5 +1,7 @@
 <?php
 
+    if ( ! defined( 'ABSPATH' ) ) { exit; }
+
     $wp_customize->add_section( 'solido_footer_section', array(
         'title' => esc_html__( 'Footer settings', 'solido' ),
         'priority' => 40,

@@ -1,5 +1,6 @@
 <?php
-
+    if ( ! defined( 'ABSPATH' ) ) { exit; }
+    
     $wp_customize->add_section( 'solido_layouts_section', array(
         'title' => esc_html__( 'Layouts settings', 'solido' ),
         'priority' => 30,
@@ -45,22 +46,7 @@
             4 => esc_html__( 'Center Top', 'solido' ),
         ),
     ));
-
-    // slider
-	$wp_customize->add_setting( 'solido_options[show-slider]' , array(
-		'default' => $defaults['show-slider'],
-		'sanitize_callback' => 'solido_sanitize_checkbox',
-    ));
     
-    $wp_customize->add_control( 'solido_show_slider_control', array(
-		'label'      => esc_html__( 'Show slider', 'solido' ),
-		'section'    => 'solido_layouts_section',
-        'settings'   => 'solido_options[show-slider]',
-        'description'=> esc_html__('For use slider , create post with category "slider", only Front page','solido'),
-        'type' => 'checkbox',
-        'priority' => 102,
-    ));
-
 
     // Blog style
 	$wp_customize->add_setting( 'solido_options[blog-list-style]' , array(

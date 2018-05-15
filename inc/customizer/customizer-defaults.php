@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 function defaults_customizer(){
 
     $defaults = array();
@@ -10,6 +12,8 @@ function defaults_customizer(){
     $defaults['colors']['header-menu-item-hover-color']='#dd0000';
     $defaults['colors']['header-menu-active-color']='#dd0000';
     $defaults['colors']['titles-color']='#525050';
+    $defaults['colors']['slider-titles-color']='#ffffff';
+    $defaults['colors']['slider-paragraph-color']='#ffffff';
     $defaults['colors']['blog-dates-background-color']='#ffffff';
     $defaults['colors']['paragraphs-color']='#989894';
     $defaults['colors']['links-color']='#dd3333';

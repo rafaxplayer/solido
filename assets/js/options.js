@@ -125,7 +125,7 @@ jQuery(function($) {
         $services_is_checked = $services_checkbox.is(':checked'),
         $services_cat_input = $('#customize-control-solido_panel_services_control');
     $services_color_control = $('#customize-control-solido_panel_services_color_control');
-    console.log($services_is_checked);
+
     if ($services_is_checked) {
         $services_cat_input.fadeIn();
         $services_color_control.fadeIn();
@@ -240,4 +240,39 @@ jQuery(function($) {
         }
     });
     // end related posts
+
+    //Slider options
+
+    var $slider_checkbox = $('#customize-control-solido_show_slider_control input:checkbox'),
+        $slider_is_checked = $slider_checkbox.is(':checked'),
+        $container_controls = $('#sub-accordion-section-solido_slider_section li');
+
+
+    $container_controls.each(function(index) {
+        if (index != 0 || index != 1) {
+            /* if ($slider_is_checked) {
+                $(this).fadeIn();
+
+            } else {
+                $(this).fadeOut();
+            } */
+        }
+    });
+
+    $slider_checkbox.change(function() {
+
+        var check_change = this.checked;
+        $container_controls.each(function(index) {
+            if (index != 0 && index != 1) {
+                if (check_change) {
+                    $(this).fadeIn();
+                } else {
+                    $(this).fadeOut();
+                }
+                console.log(index);
+            }
+        });
+
+    });
+
 });

@@ -10,13 +10,26 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 function solido_customize_register( $wp_customize ) {
 
 	$defaults = defaults_customizer();
+	
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-values.php')){
+		
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-values.php';
+	}
 
 	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-layouts.php')){
 		
 		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-layouts.php';
+	}
+
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-login.php')){
+		
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-login.php';
 	}
 	
 	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-colors.php')){
@@ -38,6 +51,7 @@ function solido_customize_register( $wp_customize ) {
 		
 		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-front-page.php';
 	}
+
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_control( 'blogname' )->priority         	= 30;
@@ -156,6 +170,8 @@ function solido_customize_options_js() {
 	wp_enqueue_script( 'solido-customize-options', get_template_directory_uri() . '/assets/js/options.js', array( 'jquery' ), '20151215', true );
 }
 add_action( 'admin_enqueue_scripts', 'solido_customize_options_js' );
+
+
 
 
 if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-sanitize.php')){
