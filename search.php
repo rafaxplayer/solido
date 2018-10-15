@@ -7,8 +7,6 @@
  * @package solido
  */
 
-if ( ! defined( 'ABSPATH' ) ) { exit; }
-
 get_header(); ?>
 
 	<section id="primary" class="content-area">

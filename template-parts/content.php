@@ -6,10 +6,10 @@
  *
  * @package solido
  */
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article data-aos="fade-up" data-aos-duration="1800" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php solido_posted_on(); ?>
 

@@ -6,6 +6,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package solido
+ * 
+ * Template Name: Landing Page
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }

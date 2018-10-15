@@ -1,4 +1,3 @@
-<?php if ( ! defined( 'ABSPATH' ) ) { exit; } ?>
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
 <div>
     <span class="screen-reader-text">Search for:</span>

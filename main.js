@@ -13,5 +13,4 @@ jQuery(function($) {
         $(this).attr({ 'data-lightbox': $(this).parent().parent().parent().attr('id') });
     });
 
-    AOS.init();
 });

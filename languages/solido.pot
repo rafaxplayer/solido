@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: solido\n"
-"POT-Creation-Date: 2018-05-06 13:40+0200\n"
+"POT-Creation-Date: 2018-03-16 15:25+0100\n"
 "PO-Revision-Date: 2018-03-16 15:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:49
+#: header.php:48
 msgid "Primary Menu"
 msgstr ""
 
@@ -388,7 +388,6 @@ msgid "Right (default)"
 msgstr ""
 
 #: inc/customizer/customizer-layouts.php:43
-#: inc/customizer/customizer-login.php:34
 msgid "Left"
 msgstr ""
 
@@ -418,50 +417,6 @@ msgstr ""
 
 #: inc/customizer/customizer-layouts.php:78
 msgid "List format"
-msgstr ""
-
-#: inc/customizer/customizer-layouts.php:90
-msgid "Show related posts"
-msgstr ""
-
-#: inc/customizer/customizer-layouts.php:93
-msgid "Show related post on single posts"
-msgstr ""
-
-#: inc/customizer/customizer-layouts.php:105
-msgid "Set terms for display related posts (Tags or Categories)"
-msgstr ""
-
-#: inc/customizer/customizer-layouts.php:111
-msgid "Categories"
-msgstr ""
-
-#: inc/customizer/customizer-layouts.php:112
-msgid "Tags"
-msgstr ""
-
-#: inc/customizer/customizer-login.php:4
-msgid "Login Form settings"
-msgstr ""
-
-#: inc/customizer/customizer-login.php:15
-msgid "Logo for login form"
-msgstr ""
-
-#: inc/customizer/customizer-login.php:18
-msgid "Set Image for login logo form (max sizes recomended 250px x 84px)"
-msgstr ""
-
-#: inc/customizer/customizer-login.php:28
-msgid "Set the position where the log will be displayed"
-msgstr ""
-
-#: inc/customizer/customizer-login.php:35
-msgid "Center ( Default )"
-msgstr ""
-
-#: inc/customizer/customizer-login.php:36
-msgid "Right"
 msgstr ""
 
 #: inc/customizer/customizer-typography.php:122
@@ -592,19 +547,19 @@ msgstr ""
 msgid "Texts font weight"
 msgstr ""
 
-#: inc/customizer/customizer.php:52
+#: inc/customizer/customizer.php:46
 msgid "Set site title & Description text color"
 msgstr ""
 
-#: inc/customizer/customizer.php:53
+#: inc/customizer/customizer.php:47
 msgid "Set site background color"
 msgstr ""
 
-#: inc/customizer/customizer.php:54
+#: inc/customizer/customizer.php:48
 msgid "Image file size 250px x 250px"
 msgstr ""
 
-#: inc/customizer/customizer.php:64
+#: inc/customizer/customizer.php:58
 msgid "Show or hide title and description"
 msgstr ""
 
@@ -620,38 +575,34 @@ msgid ""
 "                "
 msgstr ""
 
-#. translators: %s: Name of current post
-#: inc/template-functions.php:49 inc/template-functions.php:70
-msgid "Read More"
-msgstr ""
-
-#: inc/template-functions.php:111
-msgid "Related Posts"
-msgstr ""
-
 #. translators: %s: post author.
-#: inc/template-tags.php:39
+#: inc/template-tags.php:35
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:56
+#: inc/template-tags.php:52
 msgid ", "
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:63
+#: inc/template-tags.php:59
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:81 template-parts/content-page-front.php:37
-#: template-parts/content-page.php:39
+#: inc/template-tags.php:77 template-parts/content-page-front.php:36
+#: template-parts/content-page.php:37
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:136
+msgid "Read More"
 msgstr ""
 
 #: index.php:46
@@ -672,11 +623,11 @@ msgstr ""
 msgid "Results for: %s"
 msgstr ""
 
-#: single.php:23
+#: single.php:21
 msgid "<i class=\"fas fa-long-arrow-alt-left\"></i> Previous Entry"
 msgstr ""
 
-#: single.php:24
+#: single.php:22
 msgid "Next Entry <i class=\"fas fa-long-arrow-alt-right\"></i>"
 msgstr ""
 
@@ -703,7 +654,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page-front.php:24 template-parts/content-page.php:25
+#: template-parts/content-page-front.php:23 template-parts/content-page.php:24
 #: template-parts/content.php:60
 msgid "Pages:"
 msgstr ""
@@ -717,11 +668,6 @@ msgstr ""
 msgid "solido"
 msgstr ""
 
-#. Theme URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "http://juanrafaelsimarro.com/"
-msgstr ""
-
 #. Description of the plugin/theme
 msgid ""
 "Solid theme with easy and intuitive dexterity, focused for personal or "
@@ -731,4 +677,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "JR simarro"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://juanrafaelsimarro.com/"
 msgstr ""

@@ -24,6 +24,13 @@ function defaults_customizer(){
     $defaults['colors']['panel-services-color']='#21759b';
     $defaults['colors']['panel-team-background-color']='#ededed';
     $defaults['colors']['panel-team-text-color']='#525050';
+
+    //template user page
+    $defaults['colors']['user-header-color']='#525050';
+    $defaults['colors']['user-name-color']='#525050';
+    $defaults['colors']['user-description-color']='#525050';
+
+
     $defaults['typography']['titles_face']='Arial Black, Gadget, sans-serif';
     $defaults['typography']['titles_googlefont']='';
     $defaults['typography']['titles_fontweight']='400';
@@ -47,6 +54,14 @@ function defaults_customizer(){
     $defaults['typography']['site_description_face']='Arial, Helvetica, sans-serif';
     $defaults['typography']['site_description_googlefont']='';
     $defaults['typography']['site_description_fontweight']='400';
+
+    //slider
+    $defaults['typography']['slider_titles_fontsize']='2.5rem';
+    $defaults['typography']['slider_titles_fontstyle']='normal';
+    $defaults['typography']['slider_titles_fontweight']='600';
+    $defaults['typography']['slider_paragraph_fontsize']='1.5rem';
+    $defaults['typography']['slider_paragraph_fontstyle']='normal';
+    $defaults['typography']['slider_paragraph_fontweight']='400';
    
     $defaults['sidebar_position']= 1;
     $defaults['blog-list-style']= 1;
@@ -66,6 +81,7 @@ function defaults_customizer(){
     $defaults['panel-button-contact']= esc_html__('Contact us?','solido');
     $defaults['show-related_posts']=true;
     $defaults['solido_taxonomy_related_posts']='category';
+    $defaults['template-user-image'] = get_template_directory_uri().'/assets/images/profile.jpg';
 
     return $defaults;
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying all full width page
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -10,7 +10,11 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package solido
+ * 
+ * Template Name: Full Width
  */
+
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 get_header(); ?>
 

@@ -47,11 +47,15 @@ function solido_customize_register( $wp_customize ) {
 		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-footer.php';
 	}
 	
-	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-front-page.php')){
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-landing-template-page.php')){
 		
-		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-front-page.php';
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-landing-template-page.php';
 	}
 
+	if( file_exists( trailingslashit( get_template_directory()) .'/inc/customizer/customizer-user-template-page.php')){
+		
+		require_once trailingslashit( get_template_directory()) .'/inc/customizer/customizer-user-template-page.php';
+	}
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_control( 'blogname' )->priority         	= 30;
@@ -141,19 +145,39 @@ function solido_customize_register( $wp_customize ) {
 			}
 			
 		));
+		
+		$wp_customize->selective_refresh->add_partial( 'solido_tempate_user_desc',array(
+			'selector'   	=>'.user-description',
+			'setting'		=>'solido_options[footer-text]',
+			'render_callback'=>function(){
+				return get_theme_mod('solido_tempate_user_desc');
+				
+			}
+			
+		));
 	}
 }
 add_action( 'customize_register', 'solido_customize_register' );
 
 
 /**
- * Check if this page is fron-page.php template
+ * Check if this page is page-landing.php template
  *
 */
-function solido_is_static_front_page() {
+function solido_is_template_landing() {
 	
-	return ( is_front_page() && ! is_home() );
+	return ( is_page_template('page-landing.php') );
 }
+
+/**
+ * Check if this page is page-user-landing.php template
+ *
+*/
+function solido_is_template_user() {
+	
+	return ( is_page_template('page-user.php') );
+}
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */

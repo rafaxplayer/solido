@@ -102,6 +102,7 @@ function solido_content_width() {
 }
 add_action( 'after_setup_theme', 'solido_content_width', 0 );
 
+
 /**
  * Register widget area.
  *
@@ -163,8 +164,10 @@ function solido_scripts() {
 	wp_enqueue_style( 'jquery-slider-css', $directory_uri . '/assets/css/jquery.bxslider.min.css' );
 			
 	wp_enqueue_style( 'solido-style', get_stylesheet_uri() );
+
+	wp_enqueue_style('solido-block-css', $directory_uri . '/assets/css/blocks.css'); 
 	
-    wp_enqueue_style('-jquery-lightbox-css', $directory_uri . '/assets/css/lightbox.min.css'); // Enqueue it!
+    wp_enqueue_style('jquery-lightbox-css', $directory_uri . '/assets/css/lightbox.min.css'); 
 
 	wp_enqueue_script( 'jquery-slider', $directory_uri . '/assets/js/jquery.bxslider.min.js', array('jquery'), '4.2.12', true );
 	
