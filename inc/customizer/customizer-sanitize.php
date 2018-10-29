@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) { exit; }
-
 function solido_text_sanitization( $text ) {
 	return sanitize_text_field( $text );
 }

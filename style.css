@@ -491,7 +491,7 @@ a:active {
 
 .main-navigation ul ul {
     float: left;
-    z-index: 9999;
+    z-index: 99999;
     -webkit-transition: opacity .5s;
     transition: opacity .5s;
     position: relative
@@ -517,7 +517,7 @@ a:active {
     .main-navigation ul li {
         text-align: left
     }
-    .main-navigation .current-menu-item>a {
+    .main-navigation .current-menu-item a {
         color: #d00
     }
     .main-navigation>div>ul {
@@ -648,18 +648,8 @@ a:active {
 .pagination .nav-links>* {
     font-size: 24px;
     font-size: 1.5rem;
-    font-weight: 600;
-    padding: 16px;
-    padding: 1rem
-}
-
-@media screen and (min-width: 37.5rem) {
-    .pagination .nav-links>* {
-        font-size: 16px;
-        font-size: 1rem;
-        padding: 8px;
-        padding: .5rem
-    }
+    padding: 8px;
+    padding: .5rem
 }
 
 .post-navigation .nav-links a,
@@ -860,8 +850,6 @@ a:active {
     min-height: 20rem;
 }
 
-
-
 .site-content #secondary {
     margin-top: 20px;
 }
@@ -883,7 +871,7 @@ a:active {
     .site-content .content-area {
         grid-area: content;
     }
-    .page-template-page-landing .site-content {
+    .solido-front-page .site-content {
         display: block;
     }
 }
@@ -929,7 +917,6 @@ a:active {
     max-width: 43.75rem;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
     padding: 0 2rem 2rem;
 }
 
@@ -1056,7 +1043,7 @@ a:active {
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    z-index: 999;
+    z-index: 9999;
 }
 
 .post .post-date a {
@@ -1092,20 +1079,20 @@ article.page .entry-header h1,
     text-align: center
 }
 
-.page-template-page-landing .site-main,
-.page-template-page-landing .site-content {
+.solido-front-page .site-main,
+.solido-front-page .site-content {
     padding: 0;
     margin: 0;
     max-width: 100%;
 }
 
-.page-template-page-landing .page {
+.solido-front-page .page {
     -webkit-box-shadow: none;
     box-shadow: none;
     background-color: transparent;
 }
 
-.page-template-page-landing .content-wrp {
+.solido-front-page .content-wrp {
     background-color: white;
     position: relative;
     max-width: 70rem;
@@ -1113,13 +1100,13 @@ article.page .entry-header h1,
     margin-right: auto;
 }
 
-.page-template-page-landing .content-wrp.has_image {
+.solido-front-page .content-wrp.has_image {
     margin-top: -4rem;
 }
 
-.page-template-page-landing .entry-title:after,
-.page-template-page-landing .service-wrap .service-image .info h2:after,
-.page-template-page-landing #solido-team h2:after {
+.solido-front-page .entry-title:after,
+.solido-front-page .service-wrap .service-image .info h2:after,
+.solido-front-page #solido-team h2:after {
     content: '';
     position: relative;
     display: block;
@@ -1135,7 +1122,7 @@ article.page .entry-header h1,
     background-color: var(--titles-color);
 }
 
-.page-template-page-landing .entry-title,
+.solido-front-page .entry-title,
 article.page .entry-header h1,
 .single .entry-title {
     font-size: 2.5em;
@@ -1144,7 +1131,7 @@ article.page .entry-header h1,
 
 /* Serice panel*/
 
-.page-template-page-landing .service-wrap {
+.solido-front-page .service-wrap {
     display: -ms-grid;
     display: grid;
     grid-template-areas: "image-area" "service-content";
@@ -1153,19 +1140,19 @@ article.page .entry-header h1,
 }
 
 @media screen and (min-width:48rem) {
-    .page-template-page-landing .service-wrap {
+    .solido-front-page .service-wrap {
         display: -ms-grid;
         display: grid;
         grid-template-areas: "image-area service-content";
         -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr
     }
-    .page-template-page-landing .service-wrap:nth-child(even) {
+    .solido-front-page .service-wrap:nth-child(even) {
         grid-template-areas: "service-content image-area"
     }
 }
 
-.page-template-page-landing .service-wrap .service-image {
+.solido-front-page .service-wrap .service-image {
     position: relative;
     grid-area: image-area;
     background-repeat: no-repeat;
@@ -1176,7 +1163,7 @@ article.page .entry-header h1,
     overflow: hidden
 }
 
-.page-template-page-landing .service-wrap .service-image .info {
+.solido-front-page .service-wrap .service-image .info {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1197,32 +1184,32 @@ article.page .entry-header h1,
 }
 
 @media screen and (min-width:48rem) {
-    .page-template-page-landing .service-wrap .service-image .info {
+    .solido-front-page .service-wrap .service-image .info {
         height: 0;
         cursor: pointer
     }
-    .page-template-page-landing .service-wrap .service-image:hover .info {
+    .solido-front-page .service-wrap .service-image:hover .info {
         height: 100%
     }
-    .page-template-page-landing .service-wrap .service-image:hover .info h2 {
+    .solido-front-page .service-wrap .service-image:hover .info h2 {
         display: block
     }
-    .page-template-page-landing .service-wrap .service-image .info h2 {
+    .solido-front-page .service-wrap .service-image .info h2 {
         display: none
     }
 }
 
-.page-template-page-landing .service-wrap .service-image .info h2 {
+.solido-front-page .service-wrap .service-image .info h2 {
     margin: 0;
     color: #aaa;
     font-weight: 100
 }
 
-.page-template-page-landing .service-wrap .service-image .info h2:after {
+.solido-front-page .service-wrap .service-image .info h2:after {
     background-color: #aaa;
 }
 
-.page-template-page-landing .service-wrap .service-content {
+.solido-front-page .service-wrap .service-content {
     grid-area: service-content;
     padding: 64px;
     padding: 4rem;
@@ -1246,13 +1233,13 @@ article.page .entry-header h1,
     flex-direction: column
 }
 
-.page-template-page-landing .service-wrap .service-content .more {
+.solido-front-page .service-wrap .service-content .more {
     text-align: center;
     margin-top: 32px;
     margin-top: 2rem
 }
 
-.page-template-page-landing .service-wrap .service-content .more a {
+.solido-front-page .service-wrap .service-content .more a {
     display: inline-block;
     margin-right: 3px;
     margin-bottom: 3px;
@@ -1270,7 +1257,7 @@ article.page .entry-header h1,
     text-transform: uppercase;
 }
 
-.page-template-page-landing .service-wrap .service-content .more a:hover {
+.solido-front-page .service-wrap .service-content .more a:hover {
     border-color: #fff;
     background-color: #fff;
     color: #9da8b3;
@@ -1279,7 +1266,7 @@ article.page .entry-header h1,
 
 /* Team panel*/
 
-.page-template-page-landing #solido-team {
+.solido-front-page #solido-team {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1295,7 +1282,7 @@ article.page .entry-header h1,
     background-color: #ededed;
 }
 
-.page-template-page-landing #solido-team h2 {
+.solido-front-page #solido-team h2 {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     text-align: center;
@@ -1305,19 +1292,19 @@ article.page .entry-header h1,
     font-size: 2.5rem;
 }
 
-.page-template-page-landing #solido-team .team-wrap {
+.solido-front-page #solido-team .team-wrap {
     text-align: center;
     max-width: 250px;
     padding: 16px;
     padding: 1rem;
 }
 
-.page-template-page-landing #solido-team .team-wrap h3 {
+.solido-front-page #solido-team .team-wrap h3 {
     margin: 16px 0 0;
     margin: 1rem 0 0;
 }
 
-.page-template-page-landing #solido-team img {
+.solido-front-page #solido-team img {
     border-radius: 50%;
     -webkit-box-shadow: 2px 2px 7px rgba(0, 0, 0, .37);
     box-shadow: 2px 2px 7px rgba(0, 0, 0, .37);
@@ -1328,7 +1315,7 @@ article.page .entry-header h1,
     cursor: pointer;
 }
 
-.page-template-page-landing #solido-team img:hover {
+.solido-front-page #solido-team img:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
@@ -1336,7 +1323,7 @@ article.page .entry-header h1,
 
 /* Contact panel*/
 
-.page-template-page-landing .contact-wrap {
+.solido-front-page .contact-wrap {
     background-image: url(assets/images/contact.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -1344,7 +1331,7 @@ article.page .entry-header h1,
     position: relative;
 }
 
-.page-template-page-landing .contact-wrap .info {
+.solido-front-page .contact-wrap .info {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1367,14 +1354,13 @@ article.page .entry-header h1,
     justify-content: center;
 }
 
-.page-template-page-landing .contact-wrap .info h3 {
+.solido-front-page .contact-wrap .info h3 {
     font-size: 32px;
     font-size: 2rem;
     text-transform: capitalize;
-    padding: 1rem 3rem;
 }
 
-.page-template-page-landing .contact-wrap .info a {
+.solido-front-page .contact-wrap .info a {
     font-weight: 100;
     padding: 12px 40px;
     padding: .8rem 2.5rem;
@@ -2033,79 +2019,4 @@ object {
         opacity: 1;
         padding-top: 0;
     }
-}
-
-
-/* template Full width & template user landing*/
-
-.page-template-page-fullwidth .site-content,
-.page-template-page-user .site-content{
-    margin: 0;
-    padding: 0;
-    
-}
-.page-template-page-fullwidth .site-main,
-.page-template-page-user .site-main,
-.page-template-page-fullwidth .post,
-.page-template-page-user .post,
-.page-template-page-fullwidth .entry-content,
-.page-template-page-user .entry-content,
-.page-template-page-fullwidth .page .entry-content
-.page-template-page-user .page .entry-content{
-    max-width: 100%;
-    padding: 0;;
-}
-
-/* Template user page */
-
-.page-template-page-user .site-content{
-    padding:0;
-    margin: 0;
-}
-
-.page-template-page-user .entry-header
-{
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 0;
-}
-.page-template-page-user .site-titles{
-    padding: 1rem .5rem;
-}
-
-.page-template-page-user .header-wraper{
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(211, 9, 9, 0.774);
-    
-}
-
-.page-template-page-user .entry-title{
-    color:white;
-    margin: .5rem;
-}
-
-.page-template-page-user .entry-header .avatar{
-    display: block;
-    width: 150px;
-    height: 150px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-border-radius: 99em;
-    -moz-border-radius: 99em;
-    border-radius: 99em;
-    border: 5px solid #eee;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-    
-}
-.page-template-page-user .entry-header .user-description{
-    color:#c5bebe;
-    text-transform: uppercase;
 }

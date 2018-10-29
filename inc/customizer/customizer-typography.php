@@ -1,8 +1,6 @@
 <?php
 
-    if ( ! defined( 'ABSPATH' ) ) { exit; }
-
-    /* // List fonts
+    // List fonts
     $faces = array(
         'Arial, Helvetica, sans-serif' => 'Arial',
         'Arial Black, Gadget, sans-serif' => 'Arial Black',
@@ -118,7 +116,7 @@
             '700'=>'700',
             '800'=>'800',
             '900'=>'900',
-        ); */
+        );
 
     $wp_customize->add_panel( 'solido_typography_panel', array(
         'title' => esc_html__( 'Typography settings', 'solido' ),
@@ -145,7 +143,7 @@
 
     $wp_customize->add_control(
         'solido_typography_face_titles', array(
-            'label' => esc_html__( 'Typography Face for the titles', 'solido' ),
+            'label' => __( 'Typography Face for the titles', 'solido' ),
             'section' => 'solido_typography_titles_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][titles_face]',
@@ -180,7 +178,7 @@
 
     $wp_customize->add_control(
         'solido_titles_font_size', array(
-            'label' => esc_html__( 'Font size for Titles', 'solido' ),
+            'label' => __( 'Font size for Titles', 'solido' ),
             'section' => 'solido_typography_titles_section',
             'settings' => 'solido_options[typography][titles_fontsize]',
             'type' => 'select',
@@ -199,7 +197,7 @@
 
     $wp_customize->add_control(
         'solido_titles_fontweight', array(
-            'label' => esc_html__( 'Titles font weight', 'solido' ),
+            'label' => __( 'Titles font weight', 'solido' ),
             'section' => 'solido_typography_titles_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][titles_fontweight]',
@@ -217,7 +215,7 @@
 
     $wp_customize->add_control(
         'solido_titles_fontstyle', array(
-            'label' => esc_html__( 'Titles font style', 'solido' ),
+            'label' => __( 'Titles font style', 'solido' ),
             'section' => 'solido_typography_titles_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][titles_fontstyle]',
@@ -246,7 +244,7 @@
 
     $wp_customize->add_control(
         'solido_typography_face_site_title', array(
-            'label' => esc_html__( 'Typography Face for site title', 'solido' ),
+            'label' => __( 'Typography Face for site title', 'solido' ),
             'section' => 'solido_typography_branding_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][site_title_face]',
@@ -264,12 +262,14 @@
 
     $wp_customize->add_control(
         'solido_google_font_site_title', array(
-            'label' => esc_html__( 'Google font for site title', 'solido' ),
+            'label' => __( 'Google font for site title', 'solido' ),
             'section' => 'solido_typography_branding_section',
             'type' => 'text',
             'settings' => 'solido_options[typography][site_title_googlefont]',
         )
     );
+
+
 
     // Font size site title 
     $wp_customize->add_setting(
@@ -281,11 +281,11 @@
 
     $wp_customize->add_control(
         'solido_site_title_fontsize', array(
-            'label' => esc_html__( 'Font size site ttile', 'solido' ),
+            'label' => __( 'Font size site ttile', 'solido' ),
             'section' => 'solido_typography_branding_section',
             'settings' => 'solido_options[typography][site_title_fontsize]',
             'type' => 'select',
-            'choices'  => $font_size_header,
+            'choices'  =>$font_size_header,
             
         )
     );
@@ -300,7 +300,7 @@
 
     $wp_customize->add_control(
         'solido_site_title_fontweight', array(
-            'label' => esc_html__( 'Site title font weight', 'solido' ),
+            'label' => __( 'Site title font weight', 'solido' ),
             'section' => 'solido_typography_branding_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][site_title_fontweight]',
@@ -336,7 +336,7 @@
 
     $wp_customize->add_control(
         'solido_google_font_site_description', array(
-            'label' => esc_html__( 'Google font for site description', 'solido' ),
+            'label' => __( 'Google font for site description', 'solido' ),
             'section' => 'solido_typography_branding_section',
             'type' => 'text',
             'settings' => 'solido_options[typography][site_description_googlefont]',
@@ -353,7 +353,7 @@
 
     $wp_customize->add_control(
         'solido_header_description_fontsize', array(
-            'label' => esc_html__( 'Font size site description', 'solido' ),
+            'label' => __( 'Font size site description', 'solido' ),
             'section' => 'solido_typography_branding_section',
             'settings' => 'solido_options[typography][site_description_fontsize]',
             'type' => 'select',
@@ -372,7 +372,7 @@
 
     $wp_customize->add_control(
         'solido_site_description_fontweight', array(
-            'label' => esc_html__( 'Site description font weight', 'solido' ),
+            'label' => __( 'Site description font weight', 'solido' ),
             'section' => 'solido_typography_branding_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][site_description_fontweight]',
@@ -400,7 +400,7 @@
 
     $wp_customize->add_control(
         'solido_typography_face_menu_header', array(
-            'label' => esc_html__( 'Typography Face for the menu header', 'solido' ),
+            'label' => __( 'Typography Face for the menu header', 'solido' ),
             'section' => 'solido_typography_header_menu_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][menu_header_face]',
@@ -418,7 +418,7 @@
 
     $wp_customize->add_control(
         'solido_google_font_menu_header', array(
-            'label' => esc_html__( 'Google font for menu header', 'solido' ),
+            'label' => __( 'Google font for menu header', 'solido' ),
             'section' => 'solido_typography_header_menu_section',
             'type' => 'text',
             'settings' => 'solido_options[typography][menu_header_googlefont]',
@@ -435,7 +435,7 @@
 
     $wp_customize->add_control(
         'solido_menu_header_fontsize', array(
-            'label' => esc_html__( 'Font size menu header texts', 'solido' ),
+            'label' => __( 'Font size menu header texts', 'solido' ),
             'section' => 'solido_typography_header_menu_section',
             'settings' => 'solido_options[typography][menu_header_fontsize]',
             'type' => 'select',
@@ -454,7 +454,7 @@
 
     $wp_customize->add_control(
         'solido_menu_header_fontweight', array(
-            'label' => esc_html__( 'Menu header font weight', 'solido' ),
+            'label' => __( 'Menu header font weight', 'solido' ),
             'section' => 'solido_typography_header_menu_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][menu_header_fontweight]',
@@ -472,7 +472,7 @@
 
     $wp_customize->add_control(
         'solido_menu_header_fontstyle', array(
-            'label' => esc_html__( 'Menu header font style', 'solido' ),
+            'label' => __( 'Menu header font style', 'solido' ),
             'section' => 'solido_typography_header_menu_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][menu_header_fontstyle]',
@@ -501,7 +501,7 @@
 
     $wp_customize->add_control(
         'solido_typography_face_texts', array(
-            'label' => esc_html__( 'Typography Face for the texts', 'solido' ),
+            'label' => __( 'Typography Face for the texts', 'solido' ),
             'section' => 'solido_typography_texts_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][texts_face]',
@@ -519,7 +519,7 @@
 
     $wp_customize->add_control(
         'solido_google_font_texts', array(
-            'label' => esc_html__( 'Google font for Texts', 'solido' ),
+            'label' => __( 'Google font for Texts', 'solido' ),
             'section' => 'solido_typography_texts_section',
             'type' => 'text',
             'settings' => 'solido_options[typography][texts_googlefont]',
@@ -537,7 +537,7 @@
 
     $wp_customize->add_control(
         'solido_texts_font_size', array(
-            'label' => esc_html__( 'Font size for Texts', 'solido' ),
+            'label' => __( 'Font size for Texts', 'solido' ),
             'section' => 'solido_typography_texts_section',
             'settings' => 'solido_options[typography][texts_fontsize]',
             'type' => 'select',
@@ -556,7 +556,7 @@
 
     $wp_customize->add_control(
         'solido_texts_fontstyle', array(
-            'label' => esc_html__( 'Texts font style', 'solido' ),
+            'label' => __( 'Texts font style', 'solido' ),
             'section' => 'solido_typography_texts_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][texts_fontstyle]',
@@ -573,7 +573,7 @@
 
     $wp_customize->add_control(
         'solido_texts_fontweight', array(
-            'label' => esc_html__( 'Texts font weight', 'solido' ),
+            'label' => __( 'Texts font weight', 'solido' ),
             'section' => 'solido_typography_texts_section',
             'type' => 'select',
             'settings' => 'solido_options[typography][texts_fontweight]',
